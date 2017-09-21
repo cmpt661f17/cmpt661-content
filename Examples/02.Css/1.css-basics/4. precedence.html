@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<head>
+    <title>CSS Rules Precedence - Example</title>
+    <style type="text/css">
+        body {color : green}
+        span {color:red}
+    </style>
+</head>
+
+<body>
+    <div style="color: deeppink">
+        <p>This will inherit the parent style</p>
+    </div>
+    <span>This will user the embedded style.</span>
+    <span style="color : blue">Inline style will override the embedded style</span>
+</body>
+
+</html>

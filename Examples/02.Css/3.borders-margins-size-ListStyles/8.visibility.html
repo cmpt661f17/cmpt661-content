@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visibility</title>
+    <style>
+        p {
+            margin: 1px
+        }
+
+        .visible {
+            visibility: visible;
+        }
+
+        .not-visible {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+<p class="visible">The first paragraph is visible</p>
+<p class="not-visible">The second paragraph is not visible.</p>
+<p style="display: none">The second paragraph is not visible and does not occupy space.</p>
+<p class="visible">The third paragraph is also visible. Notice the second paragraph is still occupying space.</p>
+</body>
+</html>

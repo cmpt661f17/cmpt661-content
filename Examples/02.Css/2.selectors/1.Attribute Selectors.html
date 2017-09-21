@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--select elements with the class attributes starting with 'test'
+         div[class^="test"] {
+            background: #ffff00;
+        }
+    -->
+    <!--select elements with the class attributes ending with 'test'
+     div[class$="test"] {
+        background: #ffff00;
+    }
+    -->
+    <!--select elements with the class attributes containing 'test'
+        div[class*="test"] {
+            background: #ffff00;
+        }
+    -->
+
+    <style>
+        input[type=text] {
+            width: 150px;
+            display: block;
+            margin-bottom: 10px;
+            background-color: lightgoldenrodyellow;
+        }
+
+        input[type=button] {
+            width: 120px;
+            margin-left: 15px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<form name="input" action="" method="get">
+    Firstname:<input type="text" name="Name" value="Peter" size="20">
+    Lastname:<input type="text" name="Name" value="Griffin" size="20">
+    <input type="button" value="Example Button">
+</form>
+
+</body>
+</html>
