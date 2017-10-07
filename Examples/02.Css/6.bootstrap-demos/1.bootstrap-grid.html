@@ -2,8 +2,7 @@
 <html>
 <head>
     <title>Bootstrap</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
 
     <style>
         .border {
@@ -13,7 +12,48 @@
 
 </head>
 <body>
+<!-- Look @ https://www.w3schools.com/Bootstrap/bootstrap_grid_system.asp -->
+    <div class="container-fluid">
+        <h1>Hello World!</h1>
+        <p>Resize the browser window to see the effect.</p>
+        <div class="row">
+            <div class="col-xs-7 col-sm-6 col-lg-8" style="background-color:red;">.col-xs-7 .col-sm-6 .col-lg-8</div>
+            <div class="col-xs-5 col-sm-6 col-lg-4" style="background-color:lavender;">.col-xs-5 .col-sm-6 .col-lg-4</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-8 col-lg-10" style="background-color:lavenderblush;">.col-xs-6 .col-sm-8 .col-lg-10</div>
+            <div class="col-xs-6 col-sm-4 col-lg-2" style="background-color:lightgrey;">.col-xs-6 .col-sm-4 .col-lg-2</div>
+        </div>
+        <div class="row" style="background-color:lightcyan;">
+            <div class="col-xs-6">.col-xs-6</div>
+            <div class="col-xs-6">.col-xs-6</div>
+        </div>
+    </div>
+
     <div class="container">
+
+        <div class="row">
+            <div class="col">
+                1 of 2
+            </div>
+            <div class="col">
+                2 of 2
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                1 of 3
+            </div>
+            <div class="col">
+                2 of 3
+            </div>
+            <div class="col">
+                3 of 3
+            </div>
+        </div>
+
+        <br>
+
         <div class="row">
             <div class="col-md-4">
                 <div class="border">1/3</div>

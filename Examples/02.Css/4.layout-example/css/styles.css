@@ -20,12 +20,16 @@ nav ul { margin: 5px; }
 
 ul li
 {
-    display:inline;
+    display: inline;
     padding-left:5px;
     padding-right:5px;
     text-align:left;
     font-size:12px;
     font-weight:bold;
+}
+
+ul {
+
 }
 
 nav ul li a:hover {
