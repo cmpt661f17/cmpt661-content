@@ -44,6 +44,6 @@ let [x, y] = f()
 console.log("\n(x, y):", x, y)
 
 //Destructing an object
-let person = { firstname: 'Ali', lastname: 'Saleh' }
+let person = { firstname: 'Ali', lastname: 'Saleh', gpa : 3.6 }
 let { firstname, lastname } = person
 console.log("\n(firstname, lastname):", firstname, lastname)

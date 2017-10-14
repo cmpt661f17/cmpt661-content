@@ -1,7 +1,7 @@
 
 //Get even numbers then square them. This is an example of Chaining!
 let nums = [1, 2, 3, 4, 5, 6, 7, 8];
-let squaredEvenNums = nums.filter(x => x % 2 === 0).map(x => x * x);
+let squaredEvenNums = nums.filter(x => x % 2 === 0).map(x => x ** 2);
 console.log("squaredEvenNums:", squaredEvenNums);
 // [ 1, 9, 25, 49 ]
 

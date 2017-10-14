@@ -1,6 +1,6 @@
 let numArray = [1, 4, 50, 60, 3];
 console.log(numArray.join(","));
-let maxVal = Math.max(...numArray);
+let maxVal = Math.max(...[1, 5, 6.6, 7, 8]); //Math.max(...numArray);
 console.log(maxVal);
 
 
