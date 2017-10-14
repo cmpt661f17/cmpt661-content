@@ -1,0 +1,45 @@
+{{#if id}}
+    <h2>Update Hero Details</h2>
+{{else}}
+    <h2>Add Hero</h2>
+{{/if}}
+<br>
+<form method="post" action="/heroes">
+    <input type="hidden" id="heroId" name="id" value="{{id}}">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{name}}" required>
+    </div>
+    <div class="form-group">
+        <label for="quote">Quote</label>
+        <input type="text" class="form-control" id="quote" name="quote"
+               value="{{quote}}" required>
+    </div>
+    <div class="form-group">
+        <label for="heroType">Hero Type</label>
+        <select class="form-control" id="heroType" name="heroType" required>
+            <option value=""></option>
+            <option value="Prophet">Prophet</option>
+            <option value="Companion">Companion</option>
+            <option value="Scholar">Scholar</option>
+        </select>
+    </div>
+    <input type="submit" class="btn btn-primary">
+</form>
+
+{{#if id}}
+    <script>
+        //After the document is loaded then select the current heroType in the heroType dropdown
+        //Using plain JavaScript
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector('#heroType option[value="{{ heroType }}"]').selected = true
+        })
+
+        //After the document is loaded then select the current heroType in the heroType dropdown
+        //Another way of doing this using jQuery
+        /*$(document).ready(function () {
+            //Select the heroType in the Dropdown
+            $('#heroType').val( '{{ heroType }}' )
+        })*/
+    </script>
+{{/if}}

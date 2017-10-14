@@ -1,0 +1,52 @@
+<h1>My hereos:</h1>
+<br>
+<a id="addHero" class="btn btn-info" onclick="addHero()">
+    <i class="fa fa-plus"></i> Add
+</a>
+
+<a id="addHero" class="btn btn-info" href="/heroes/new">
+    <i class="fa fa-plus"></i> Add using server-rendered form
+</a>
+
+<div id="heroes-list">
+    <table id="heroesTable" class="table table-striped">
+        <thead>
+        <tr>
+            <td>Name</td>
+            <td>Type</td>
+            <td>Quote</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#heroes}}
+            <tr data-heroid="{{id}}">
+                <td>{{ name }}</td>
+                <td>{{ heroType }}</td>
+                <td>{{ quote }}</td>
+                <td>
+                    <button onclick="displayHero({{id}})" class="btn btn-info">
+                        <i class="fa fa-info-circle"></i>
+                    </button>
+                    <button onclick="updateHero({{id}})" class="btn btn-info">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button onclick="deleteHero({{id}})" class="btn btn-info">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+
+                    <a href="/heroes/{{id}}" class="btn btn-info">
+                        <i class="fa fa-pencil-square-o"></i> Edit using server-rendered form
+                    </a>
+                </td>
+            </tr>
+        {{/heroes}}
+        </tbody>
+    </table>
+</div>
+
+<div id="hero-details"></div>
+<dialog id="hero-dialog"></dialog>
+
+
+<script src="/views/js/hero.js"></script>

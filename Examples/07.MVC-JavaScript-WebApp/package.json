@@ -1,0 +1,11 @@
+{
+  "name": "MVC-WebApp",
+  "version": "0.0.2017",
+  "dependencies": {
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "express": "latest",
+    "express-handlebars": "latest",
+    "fs-promise": "latest"
+  }
+}

@@ -1,0 +1,13 @@
+<caption for="studentsDD">Select a student:</caption>
+<select id="studentsDD">
+    <option value=""></option>
+    {{#students}}
+        <option value="{{studentId}}"> {{studentId}} - {{firstname}} {{lastname}}</option>
+    {{/students}}
+</select>
+
+<br><br>
+
+<div id="studentDetails"></div>
+
+<script src="views/js/student.js"></script>
