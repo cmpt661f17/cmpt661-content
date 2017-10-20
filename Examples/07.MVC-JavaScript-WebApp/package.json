@@ -2,10 +2,10 @@
   "name": "MVC-WebApp",
   "version": "0.0.2017",
   "dependencies": {
-    "body-parser": "latest",
+    "body-parser": "^1.18.2",
     "cookie-parser": "latest",
-    "express": "latest",
+    "express": "^4.16.2",
     "express-handlebars": "latest",
-    "fs-promise": "latest"
+    "fs-extra": "^4.0.2"
   }
 }

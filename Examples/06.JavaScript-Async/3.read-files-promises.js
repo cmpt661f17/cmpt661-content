@@ -1,10 +1,6 @@
-let fs = require('fs-promise');
+let fs = require('fs-extra');
 
 let studentPromise = fs.readFile('data/student2.json');
-
-
-
-
 
 function getStudent(studentId) {
     return fs.readFile('data/student.json').then(data => {

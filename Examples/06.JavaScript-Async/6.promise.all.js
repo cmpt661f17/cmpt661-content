@@ -1,4 +1,4 @@
-let fs = require('fs-promise');
+let fs = require('fs-extra');
 let fetch = require("node-fetch");
 
 let fetchProgram = () => {

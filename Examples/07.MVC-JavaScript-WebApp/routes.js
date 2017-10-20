@@ -1,7 +1,7 @@
 let express = require('express')
 
 let router = express.Router()
-const fs = require("fs-promise")
+const fs = require("fs-extra")
 
 let studentController = require('./controllers/StudentController')
 let heroController = require('./controllers/HeroController')

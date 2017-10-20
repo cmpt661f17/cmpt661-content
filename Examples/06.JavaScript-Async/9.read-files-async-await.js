@@ -1,4 +1,4 @@
-let fs = require('fs-promise');
+let fs = require('fs-extra');
 
 async function getStudent(studentId) {
     let data = await fs.readFile('data/student.json');

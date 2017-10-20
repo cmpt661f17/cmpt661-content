@@ -26,3 +26,13 @@ console.log('Person json string: ', jsonString);
 //More info @ https://developer.mozilla.org/en-US/docs/JSON
 let personObject = JSON.parse(jsonString);
 console.log('personObject: ', personObject);
+
+let person = {
+    name: 'Samir Saghir',
+    address: {
+        city: 'Doha',
+        street: 'University St'
+    }
+};
+let { name, address: {city} } = person;
+console.log( { name, city });

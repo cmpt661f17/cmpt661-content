@@ -1,6 +1,6 @@
 /*If the script is running under node.js then import 'node-fetch' package
- using async and await requires transpiling using babel as these features are not yet suppored in Node.js and browsers
- */
+*/
+
 if (typeof window === 'undefined') {
     var fetch = require('node-fetch');
 }
@@ -12,6 +12,8 @@ async function getCountries(region) {
     let countries = await response.json();
     return countries;
 }
+
+
 
 function displayCountries(region, countries) {
     log(`Countries in ${region} and their capital city:`);

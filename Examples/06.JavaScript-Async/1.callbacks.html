@@ -9,8 +9,10 @@
                 because getCurrentPosition is an asynchronous function. Instead we have to call it and pass
                 a callback function to it.
             */
-            let myLocation = navigator.geolocation.getCurrentPosition(function() {});
-            console.log(myLocation);
+            let myLocation = navigator.geolocation.getCurrentPosition(function () {
+            });
+
+            console.log("myLocation", myLocation);
 
             navigator.geolocation.getCurrentPosition(showPosition);
         }

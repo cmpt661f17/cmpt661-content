@@ -1,6 +1,6 @@
 class HeroRepository {
     constructor() {
-        this.fs = require('fs-promise')
+        this.fs = require('fs-extra')
     }
 
     async getHeroes() {
