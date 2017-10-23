@@ -1,4 +1,4 @@
-let studentRepository = require('./9.StudentRepository.async-await')
+let studentRepository = require('./9.StudentRepository.async-await');
 let studentId = 2015002;
 
 studentRepository.getStudentCourses(studentId)
