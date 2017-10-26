@@ -4,5 +4,10 @@
   "dependencies": {
     "fs-extra": "^4.0.2",
     "node-fetch": "^1.7.3"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0"
   }
 }

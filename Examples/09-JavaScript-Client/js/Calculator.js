@@ -1,14 +1,14 @@
 //When the document is loaded in the browser then listen to btnCompute click event
 document.addEventListener("DOMContentLoaded", () => {
     console.log("js-DOM fully loaded and parsed");
-    document.querySelector('#btnCompute').addEventListener("click", computeResult)
+    document.querySelector('#btnCompute').addEventListener("click", computeResult);
 })
 
 function computeResult() {
-    const num1 = document.getElementById("num1").value
-    const num2 = document.getElementById("num2").value
-    const operation = document.getElementById("operation").value
-    const resultDiv = document.getElementById("result")
+    const num1 = document.querySelector("#num1").value
+    const num2 = document.querySelector("#num2").value
+    const operation = document.querySelector("#operation").value
+    const resultDiv = document.querySelector("#result")
 
     const calculator = new Calculator()
     let result

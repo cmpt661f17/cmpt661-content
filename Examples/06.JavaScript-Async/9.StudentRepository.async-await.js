@@ -39,6 +39,7 @@ class StudentRepository {
         student.courses = await Promise.all(courses.map(course => this.getCourseInstructor(course)));
 
         return student;
+
     }
 }
 

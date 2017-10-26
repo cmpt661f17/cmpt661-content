@@ -12,33 +12,33 @@
 
 	<script>
 
-        let ninjaClickCount = 0
+        let ninjaClickCount = 0;
         document.addEventListener("DOMContentLoaded", () => {
-            let ninjaImage = document.querySelector("#happyNinjaImage")
-            document.querySelector("#gender-select").addEventListener("change", onGenderChange)
+            let ninjaImage = document.querySelector("#happyNinjaImage");
+            document.querySelector("#gender-select").addEventListener("change", onGenderChange);
 
-            ninjaImage.addEventListener("click", onImageClick)
-        })
+            ninjaImage.addEventListener("click", onImageClick);
+        });
 
 		function onGenderChange() {
-			let select = document.getElementById("gender-select")
-			log("Selected gender: " + select.options[select.selectedIndex].value)
+			let select = document.getElementById("gender-select");
+			log("Selected gender: " + select.options[select.selectedIndex].value);
 		}
 
 		function onImageClick() {
-            console.log(this)
-            ninjaClickCount++
-            log("Beware the Ninja! This alert " + ninjaClickCount)
+            console.log(this);
+            ninjaClickCount++;
+            log(`Beware the Ninja! Alert #${ninjaClickCount}`);
 
             if (ninjaClickCount >= 3) {
-                log("سأهشم جهازك ...! لصبر حدود")
-                this.src = "images/moving-ninja.gif"
+                log("سأهشم جهازك ...! لصبر حدود");
+                this.src = "images/moving-ninja.gif";
             }
         }
 		
 		function log(content) {
-            let messagesDev = document.querySelector("#messages")
-            messagesDev.innerHTML += `<br>${content}`
+            let messagesDev = document.querySelector("#messages");
+            messagesDev.innerHTML += `<br>${content}`;
         }
 	</script>
 </head>
