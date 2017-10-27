@@ -46,7 +46,7 @@ describe("Calculator Test Suite", () => {
         expect( () => calculator.divide(10, 0) ).to.throw("Invalid input");
     });
 
-    //More info @ chaijs.com/api/bdd/
+    //More info @ https://chaijs.com/api/bdd/
     it("Other expect matchers", () => {
         expect({ foo: 'baz' }).to.have.property('foo').and.equal('baz')
         expect(1 === 1).to.be.true
