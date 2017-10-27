@@ -13,7 +13,7 @@ class Calculator {
 
     divide(x, y) {
         if (y === 0) {
-            return 0
+            throw "Invalid input";
         } else {
             return x / y
         }

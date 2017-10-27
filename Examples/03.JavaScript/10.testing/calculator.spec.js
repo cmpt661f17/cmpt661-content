@@ -1,5 +1,5 @@
-const calculator = require('./calculator')
-const expect = require("chai").expect
+const calculator = require('./calculator');
+const expect = require("chai").expect;
 
 describe("Calculator Test Suite", () => {
 
@@ -20,30 +20,31 @@ describe("Calculator Test Suite", () => {
     })
 
     it("should add two numbers", () => {
-        expect( calculator.add(3, 2) ).to.equal(5)
-        expect( calculator.add(1, 2) ).to.equal(3)
+        expect( calculator.add(3, 2) ).to.equal(5);
+        expect( calculator.add(-1, -2) ).to.equal(-3);
     })
 
     it("should subtract two numbers", () => {
-        expect( calculator.subtract(3, 2) ).to.equal(1)
-        expect( calculator.subtract(-10, -1) ).to.equal(-9)
+        expect( calculator.subtract(3, 2) ).to.equal(1);
+        expect( calculator.subtract(-10, -1) ).to.equal(-9);
     })
 
     it("should multiply correctly", () => {
-        expect( calculator.multiply(2, 3) ).to.equal(6)
+        expect( calculator.multiply(2, 3) ).to.equal(6);
     })
 
     it("should divide correctly", () => {
-        expect( calculator.divide(10, 5) ).to.equal(2)
-    })
-
-    it("should return 0 when dividing by 0", () => {
-        expect( calculator.divide(1, 0) ).to.equal(0)
+        expect( calculator.divide(10, 5) ).to.equal(2);
     })
 
     it("should return NaN when multiplying a string with a number", function() {
-        expect( calculator.multiply('a', 3) ).to.be.NaN
-    })
+        expect( calculator.multiply('a', 3) ).to.be.NaN;
+    });
+
+    it("should return throw an exception when dividing by 0", function() {
+        //For testing for exceptions you have to pass a function to expect. Note the result of calling the function
+        expect( () => calculator.divide(10, 0) ).to.throw("Invalid input");
+    });
 
     //More info @ chaijs.com/api/bdd/
     it("Other expect matchers", () => {

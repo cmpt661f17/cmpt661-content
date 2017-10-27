@@ -1,3 +1,4 @@
+
 Array.prototype.getMax = function() {
     let max = Math.max(...this);
     return max;
