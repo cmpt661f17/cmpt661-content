@@ -1,4 +1,4 @@
-const Hero = require('./hero.js');
+const Hero = require('./hero');
 
 class HeroRepository {
     constructor() {

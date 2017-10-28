@@ -1,3 +1,4 @@
+//open Terminal then cd 9-modules\webpack-modules-bundler
 //Then run webpack on the command-line to create bundle.js
 //Install npm i -D uglifyjs-webpack-plugin
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');

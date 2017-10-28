@@ -1,10 +1,8 @@
 const  greeting = require('./greeting');
-const circle = require('./circle.js');
+const circle = require('./circle');
 
-console.log('Loaded greet module');
 let text = greeting.yahala();
 console.log(text);
-
 
 let r = 4;
 console.log(`The area of radius ${r}: ${circle.area(r)}

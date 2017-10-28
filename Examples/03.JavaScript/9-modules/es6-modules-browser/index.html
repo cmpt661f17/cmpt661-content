@@ -2,22 +2,7 @@
 <head>
     <title>ES6 modules tryout</title>
     <script src="app.js" type="module"></script>
-
-    <!-- in case ES6 modules aren't supported + loaded after HTML is parsed -->
-    <script src="dist/bundle.js" defer nomodule></script>
-
-    <!-- executed after HTML is parsed -->
-    <script type="module">
-        console.log('js module - displayed after after HTML is parsed');
-    </script>
-
-    <!-- executed immediately -->
-    <script>
-        console.log('not module - displayed immediately');
-    </script>
-
 </head>
 <body>
-<!-- ... -->
 </body>
 </html>
