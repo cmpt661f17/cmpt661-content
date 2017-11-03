@@ -4,28 +4,30 @@
     <title>MVC App</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <!-- More info @ http://fontawesome.io/get-started/ -->
+    <!-- More info @ http://fontawesome.io/icons/ -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/views/css/styles.css">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 
     <script>
         //Set the active class on the clicked nav-link
-        $(document).ready(() => {
+        //Do so when the document is loaded in the browser
+        document.addEventListener("DOMContentLoaded", () => {
             // get current URL path and assign 'active' class
             const pathname = window.location.pathname
             //set css class of the link corresponding to the current Url to active
-            $(`.navbar-nav > li > a[href='${pathname}']`).parent().addClass('active')
-        })
+            const menuItem = document.querySelector(`.navbar-nav > li > a[href='${pathname}']`).parentNode;
+            //console.log(menuItem);
+            menuItem.classList.add("active");
+        });
 
     </script>
 </head>
 
 <body>
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark rounded">
+<nav class="navbar sticky-top navbar-expand-sm bg-primary navbar-dark rounded">
     <!-- Brand -->
     <a class="navbar-brand" href="#">
         <img src="/views/img/mvcIcon.png" alt="Logo" style="width:50px;">
@@ -48,17 +50,22 @@
             {{#if username}}
                 <li class="nav-item">
                         <span class="navbar-text">
-                            <span class="glyphicon glyphicon-user"></span>
+                            <i class="fa fa-user" aria-hidden="true"></i>
                             Welcome {{username}}
                         </span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout"><span class="glyphicon glyphicon-log-out"></span>
-                        Logout</a>
+                    <a class="nav-link" href="/logout">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        Logout
+                    </a>
                 </li>
             {{else}}
                 <li class="nav-item">
-                    <a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    <a class="nav-link" href="/login">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        Login
+                    </a>
                 </li>
             {{/if}}
         </ul>

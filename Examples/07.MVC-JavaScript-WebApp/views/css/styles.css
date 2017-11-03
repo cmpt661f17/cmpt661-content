@@ -1,14 +1,3 @@
-table#hero-show img {
-    width: 400px;
-    height: 300px;
-}
-
-table#hero-show td.label {
-    width: 25%;
-    text-align: right;
-    color: #555;
-}
-
 .btn {
     margin-bottom: 5px;
 }
@@ -25,11 +14,13 @@ dialog {
     width: 600px;
     font-family:sans-serif;
     padding: 5px 10px 20px 20px;
+    border-radius: 15px;
+    border: 5px solid cornflowerblue;
 }
 
 .dialog-header {
     padding: 5px 5px;
-    background-color: #434a54;
+    background-color: cornflowerblue;
     font-size: 18px;
     color: #fff;
     text-align: center;

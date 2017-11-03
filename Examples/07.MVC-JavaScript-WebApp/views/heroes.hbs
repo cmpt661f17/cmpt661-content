@@ -1,10 +1,10 @@
 <h1>My hereos:</h1>
 <br>
-<a id="addHero" class="btn btn-info" onclick="addHero()">
+<a id="addHero" class="btn btn-primary" href="#" onclick="addHero()">
     <i class="fa fa-plus"></i> Add
 </a>
 
-<a id="addHero" class="btn btn-info" href="/heroes/new">
+<a id="addHero" class="btn btn-primary" href="/heroes/new">
     <i class="fa fa-plus"></i> Add using server-rendered form
 </a>
 
@@ -25,17 +25,17 @@
                 <td>{{ heroType }}</td>
                 <td>{{ quote }}</td>
                 <td>
-                    <button onclick="displayHero({{id}})" class="btn btn-info">
+                    <button onclick="displayHero({{id}})" class="btn btn-primary">
                         <i class="fa fa-info-circle"></i>
                     </button>
-                    <button onclick="updateHero({{id}})" class="btn btn-info">
+                    <button onclick="updateHero({{id}})" class="btn btn-primary">
                         <i class="fa fa-pencil-square-o"></i>
                     </button>
-                    <button onclick="deleteHero({{id}})" class="btn btn-info">
+                    <button onclick="deleteHero({{id}})" class="btn btn-primary">
                         <i class="fa fa-trash-o"></i>
                     </button>
 
-                    <a href="/heroes/{{id}}" class="btn btn-info">
+                    <a href="/heroes/{{id}}" class="btn btn-primary">
                         <i class="fa fa-pencil-square-o"></i> Edit using server-rendered form
                     </a>
                 </td>
