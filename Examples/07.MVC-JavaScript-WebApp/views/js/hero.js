@@ -15,7 +15,7 @@ const heroTemplate = `
             <td>{{quote}}</td>
         </tr>
     </tbody>
-</table>`
+</table>`;
 
 const heroFormTemplate = `
     <header class="dialog-header">
@@ -44,100 +44,102 @@ const heroFormTemplate = `
         <input type="submit" class="btn btn-primary">
               
         <input type="button" class="btn btn-primary" formnovalidate onclick="closeDialog()" value="Cancel">
-    </form>`
+    </form>`;
 
 async function displayHero(heroId) {
     console.log("displayHero.heroId: ", heroId)
 
     try {
-        const hero = await fetchHero(heroId)
-        console.log(hero)
+        const hero = await fetchHero(heroId);
+        console.log(hero);
 
-        //let studentTemplate = $('#hero-template').html(),
-        let htmlTemplate = Handlebars.compile(heroTemplate)
+        //const studentTemplate = $('#hero-template').html(),
+        const htmlTemplate = Handlebars.compile(heroTemplate);
 
-        document.querySelector('#hero-details').innerHTML = htmlTemplate(hero)
+        document.querySelector('#hero-details').innerHTML = htmlTemplate(hero);
     }
     catch (err) {
-        console.log(err)
+        console.log(err);
     }
 }
 
 async function updateHero(heroId) {
-    console.log("heroId", heroId)
+    console.log("heroId", heroId);
     try {
-        const hero = await fetchHero(heroId)
+        const hero = await fetchHero(heroId);
         //console.log(hero)
 
         //Convert the form template to a function
-        const formTemplate = Handlebars.compile(heroFormTemplate)
+        const formTemplate = Handlebars.compile(heroFormTemplate);
 
-        let dialogTitle = "Update Hero"
-        let heroDialog = document.querySelector('#hero-dialog')
-        heroDialog.innerHTML = formTemplate({hero, dialogTitle})
+        const dialogTitle = "Update Hero";
+        const heroDialog = document.querySelector('#hero-dialog');
+        heroDialog.innerHTML = formTemplate({hero, dialogTitle});
 
         heroDialog.style.display = '';
 
-        heroDialog.showModal()
+        heroDialog.showModal();
 
         //$('#heroType').val(hero.heroType) // using jQuery
         //Select the current heroType in the heroType dropdown
-        document.querySelector(`#heroType option[value="${hero.heroType}"]`).selected = true
+        document.querySelector(`#heroType option[value="${hero.heroType}"]`).selected = true;
         //console.log(document.querySelector('#heroType').value )
     }
     catch (err) {
-        console.log(err)
+        console.log(err);
     }
 }
 
 function addHero() {
     //Convert the form template to a function
-    const formTemplate = Handlebars.compile(heroFormTemplate)
+    const formTemplate = Handlebars.compile(heroFormTemplate);
 
-    let dialogTitle = "Add Hero"
-    let heroDialog = document.querySelector('#hero-dialog')
-    heroDialog.innerHTML = formTemplate({ dialogTitle })
+    const dialogTitle = "Add Hero";
+    const heroDialog = document.querySelector('#hero-dialog');
+    heroDialog.innerHTML = formTemplate({ dialogTitle });
 
-    heroDialog.showModal()
+    heroDialog.style.display = '';
+    heroDialog.showModal();
 }
 
 function closeDialog() {
-    document.querySelector('#hero-dialog').close()
+    document.querySelector('#hero-dialog').close();
+    document.querySelector('#hero-dialog').style.display = 'none';
 }
 
 async function deleteHero(heroId) {
     // Ask the user to confirm. If they cancel the request then exit this function
     if (!confirm('Confirm delete?')) {
-        return
+        return;
     }
 
     //Get the data-heroId custom attribute associated with the clicked Link
     //Note this refers to the link that was clicked (i.e., the source of the click event)
     try {
-        console.log("deleteHero.heroId: ", heroId)
+        console.log("deleteHero.heroId: ", heroId);
 
-        let url = `/api/heroes/${heroId}`
-        console.log("deleteHero.heroId", heroId)
+        const url = `/api/heroes/${heroId}`;
+        console.log("deleteHero.heroId", heroId);
 
         //After successful delete remove the row from the HTML table
         //This line should be after fetch but it does not work if I do so
         //$(this).closest('tr').remove()
-        //this.parentNode.parentNode.removeChild()
-        const heroesTable = document.querySelector(`#heroesTable tbody`)
-        const trToDelete = heroesTable.querySelector(`tr[data-heroid="${heroId}"]`)
-        heroesTable.removeChild(trToDelete)
+        //this.parentNode.parentNode.removeChild();
+        const heroesTable = document.querySelector(`#heroesTable tbody`);
+        const trToDelete = heroesTable.querySelector(`tr[data-heroid="${heroId}"]`);
+        heroesTable.removeChild(trToDelete);
 
-        console.log(trToDelete)
+        console.log(trToDelete);
 
-        await fetch(url, {method: 'delete'})
+        await fetch(url, {method: 'delete'});
     }
     catch (err) {
-        console.log(err)
+        console.log(err);
     }
 }
 
 async function fetchHero(heroId) {
-    let url = `/api/heroes/${heroId}`
-    const response = await fetch(url)
-    return await response.json()
+    const url = `/api/heroes/${heroId}`;
+    const response = await fetch(url);
+    return await response.json();
 }
