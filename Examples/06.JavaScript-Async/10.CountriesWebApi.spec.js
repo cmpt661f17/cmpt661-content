@@ -8,8 +8,8 @@ chai.use(chaiHttp);
 
 describe('Countries Web API Test Suite', () => {
     it('Asia should should have 50 countries', async () => {
-        let region = 'Asia';
-        let uri = `region/${region}`;
+        const region = 'Asia';
+        const uri = `region/${region}`;
 
         const response = await chai.request('https://restcountries.eu/rest/v1/').get(uri);
         //console.log(response);

@@ -1,12 +1,9 @@
-let express = require('express')
-
-let router = express.Router()
+const express = require('express')
+const router = express.Router()
 const fs = require("fs-extra")
 
-let studentController = require('./controllers/StudentController')
-let heroController = require('./controllers/HeroController')
-
-router.get("/api/heroes2", (req, res) => heroController.getHeroes(req, res))
+const studentController = require('./controllers/StudentController')
+const heroController = require('./controllers/HeroController')
 
 //Example route with multiple parameters
 //Request example: authors/erradi/books/1234678g
@@ -19,18 +16,18 @@ router.get('/api/authors/:author/books/:isbn', (req, res) => {
 })
 
 // Students Web API
-router.get('/api/students', (req, res) => studentController.getStudents (req, res) )
-router.get('/api/students/:id', (req, res) => studentController.getStudent(req, res) )
+router.get('/api/students', studentController.getStudents );
+router.get('/api/students/:id', studentController.getStudent )
 
 //Heroes Web API
 router.route('/api/heroes')
-    .get( (req, res) => heroController.getHeroes(req, res) )
-    .post( (req, res) => heroController.addHero(req, res) )
+    .get( heroController.getHeroes )
+    .post( heroController.addHero )
 
 router.route('/api/heroes/:id')
-    .get( (req, res) => heroController.getHero(req, res) )
-    .put( (req, res) => heroController.updateHero(req, res) )
-    .delete( (req, res) => heroController.deleteHero(req, res) )
+    .get( heroController.getHero )
+    .put( heroController.updateHero )
+    .delete( heroController.deleteHero )
 
 //Routes returning views
 router.get('/', (req, res) => res.render('index') )
@@ -38,7 +35,7 @@ router.get('/', (req, res) => res.render('index') )
 router.route('/login')
     .get( (req, res) => res.sendFile(__dirname + "/views/login.html") )
     .post( (req, res) => {
-        let userInfo = req.body
+        const userInfo = req.body
         console.log("router.post.req.body", userInfo)
 
         //Return an accessCount cookie to the client -- expires is optional
@@ -60,7 +57,7 @@ router.use( (req, res, next) => {
     }
     else {
         const username = req.cookies.username
-        console.log("isAuthenticated.username", username)
+        console.log("Current username", username)
 
         //Allows accessing username variable from handlebars template
         res.locals.username = username
@@ -68,13 +65,13 @@ router.use( (req, res, next) => {
     }
 })
 
-router.get('/students', (req, res) => studentController.index(req, res) )
+router.get('/students', studentController.index )
 
 router.route('/heroes')
-    .get( (req, res) => heroController.index(req, res) )
-    .post( (req, res) => heroController.postHero(req, res) )
+    .get( heroController.index )
+    .post( heroController.postHero )
 
-router.get('/heroes/:id', (req, res) => heroController.heroForm(req, res) )
+router.get('/heroes/:id', heroController.heroForm )
 
 module.exports = router
 

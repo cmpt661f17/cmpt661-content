@@ -76,6 +76,8 @@ async function updateHero(heroId) {
         let heroDialog = document.querySelector('#hero-dialog')
         heroDialog.innerHTML = formTemplate({hero, dialogTitle})
 
+        heroDialog.style.display = '';
+
         heroDialog.showModal()
 
         //$('#heroType').val(hero.heroType) // using jQuery

@@ -3,15 +3,14 @@
     <meta charset="UTF-8">
     <title>MVC App</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <!-- More info @ http://fontawesome.io/get-started/ -->
-    <link rel="stylesheet" href="/views/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="/views/css/styles.css">
 
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 
     <script>
         //Set the active class on the clicked nav-link
@@ -19,42 +18,54 @@
             // get current URL path and assign 'active' class
             const pathname = window.location.pathname
             //set css class of the link corresponding to the current Url to active
-            $(`.nav > li > a[href='${pathname}']`).parent().addClass('active')
+            $(`.navbar-nav > li > a[href='${pathname}']`).parent().addClass('active')
         })
 
     </script>
 </head>
 
 <body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">MVC WebApp</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/students">Students</a></li>
-            <li><a href="/heroes">Heroes</a></li>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark rounded">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">
+        <img src="/views/img/mvcIcon.png" alt="Logo" style="width:50px;">
+    </a>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="nav-content">
+        <ul class="navbar-nav active">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/students">Students</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/heroes">Heroes</a>
+            </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="navbar-nav ml-auto">
             {{#if username}}
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span>
-                    Welcome {{username}}</a>
+                <li class="nav-item">
+                        <span class="navbar-text">
+                            <span class="glyphicon glyphicon-user"></span>
+                            Welcome {{username}}
+                        </span>
                 </li>
-                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout"><span class="glyphicon glyphicon-log-out"></span>
+                        Logout</a>
+                </li>
             {{else}}
-                <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                </li>
             {{/if}}
         </ul>
     </div>
 </nav>
-
-<div class="container-fluid">
-    <div class="container">
-        <div class="row">
-            {{{body}}}
-        </div>
-    </div>
+<div class="container">
+    {{{body}}}
 </div>
 </body>
 </html>

@@ -1,10 +1,8 @@
-class HeroController {
-    constructor() {
-        this.heroRepository = require('./../models/HeroRepository')
-    }
+const heroRepository = require('./../models/HeroRepository');
 
+class HeroController {
     async getHeroes(req, res) {
-        const heroes = await this.heroRepository.getHeroes()
+        const heroes = await heroRepository.getHeroes()
         res.json(heroes)
     }
 
@@ -12,7 +10,7 @@ class HeroController {
         try {
             const heroId = req.params.id
             console.log('getHero.req.params.id', heroId)
-            const hero = await this.heroRepository.getHero(parseInt(heroId))
+            const hero = await heroRepository.getHero(parseInt(heroId))
             console.log(JSON.stringify(hero, null, 2))
             res.json(hero)
         }
@@ -24,7 +22,7 @@ class HeroController {
     async addHero(req, res) {
         try {
             let hero = req.body
-            hero = await this.heroRepository.addHero(hero)
+            hero = await heroRepository.addHero(hero)
             const urlOfNewHero = `/api/heroes/${hero.id}`
             res.location(urlOfNewHero)
             res.status(201).send("created")
@@ -39,7 +37,7 @@ class HeroController {
         try {
             const hero = req.body
 
-            await this.heroRepository.updateHero(hero)
+            await heroRepository.updateHero(hero)
             res.status(200).send("ok")
         }
         catch (err) {
@@ -51,7 +49,7 @@ class HeroController {
         try {
             const heroId = req.params.id
 
-            await this.heroRepository.deleteHero(heroId)
+            await heroRepository.deleteHero(heroId)
             res.status(200).send("ok")
         }
         catch (err) {
@@ -60,7 +58,7 @@ class HeroController {
     }
 
     async index (req, res) {
-        const heroes = await this.heroRepository.getHeroes()
+        const heroes = await heroRepository.getHeroes()
 
         res.render('heroes', {heroes})
     }
@@ -73,7 +71,7 @@ class HeroController {
 
         //If heroId is not equal to new and if it is a number then get the hero to pass it to the template
         if (heroId != 'new' && !isNaN(parseInt(heroId)) ) {
-            hero = await this.heroRepository.getHero( parseInt(heroId) )
+            hero = await heroRepository.getHero( parseInt(heroId) )
         }
 
         res.render('hero-form', hero )
@@ -84,10 +82,10 @@ class HeroController {
             const hero = req.body
 
             if (hero.id === '') {
-                await this.heroRepository.addHero(hero)
+                await heroRepository.addHero(hero)
             } else {
                 hero.id = parseInt(hero.id)
-                await this.heroRepository.updateHero(hero)
+                await heroRepository.updateHero(hero)
             }
             res.redirect("/heroes")
         }

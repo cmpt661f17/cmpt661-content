@@ -1,5 +1,5 @@
-let express = require('express')
-let app = express()
+const express = require('express')
+const app = express()
 
 //Define a middleware function
 function logger (req, res, next) {
@@ -12,13 +12,13 @@ function logger (req, res, next) {
 app.use(logger);
 
 app.get('/', (req, res) => {
-    let responseText = `السلام عليكم ورحمة الله وبركاته<br>
+    const responseText = `السلام عليكم ورحمة الله وبركاته<br>
         Requested at: ${req.requestTime}`
     res.send(responseText)
 })
 
-let port = 3000
+const port = 4000
 app.listen(port, () => {
-    let host = "localhost"
+    const host = "localhost"
     console.log(`App is running and available @ http://${host}:${port}`)
 })

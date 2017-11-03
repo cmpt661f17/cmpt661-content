@@ -1,12 +1,11 @@
+const fs = require('fs-extra');
+
 class StudentRepository {
-    constructor() {
-        this.fs = require('fs-extra')
-    }
 
     async getStudent(studentId) {
-        let data = await this.fs.readFile('data/student.json');
-        let students = JSON.parse(data);
-        let student = students.find(s => s.studentId === studentId);
+        const data = await fs.readFile('data/student.json');
+        const students = JSON.parse(data);
+        const student = students.find(s => s.studentId === studentId);
         if (student != "undefined") {
             return student;
         }
@@ -16,7 +15,7 @@ class StudentRepository {
     }
 
     async getCourses(courseIds) {
-        let data = await this.fs.readFile('data/course.json');
+        const data = await fs.readFile('data/course.json');
         let courses = JSON.parse(data);
         courses = courses.filter(c => courseIds.indexOf(c.crn) >= 0);
         //console.log(courses);
@@ -24,8 +23,9 @@ class StudentRepository {
     }
 
     async getCourseInstructor(course) {
-        let data = await this.fs.readFile('data/staff.json');
-        let instructors = JSON.parse(data);
+        //const fs = require('fs-extra');
+        const data = await fs.readFile('data/staff.json');
+        const instructors = JSON.parse(data);
         course.instructor = instructors.find(ins => ins.staffNo === course.instructorId);
         delete course.instructor.password;  //No need to return the password attribute
         return course;
@@ -33,10 +33,12 @@ class StudentRepository {
 
     // create a new "async" function so we can use the "await" keyword
     async getStudentCourses(studentId) {
-        let student = await this.getStudent(studentId);
-        let courses = await this.getCourses(student.courseIds);
+        const student = await this.getStudent(studentId);
+        const courses = await this.getCourses(student.courseIds);
         //Get instructor details for each course. Promise.all allows doing so in parallel.
-        student.courses = await Promise.all(courses.map(course => this.getCourseInstructor(course)));
+        // The commented statement below is equivalent to the one used under it
+        //student.courses = await Promise.all( courses.map( c => this.getCourseInstructor(c) ) );
+        student.courses = await Promise.all( courses.map( this.getCourseInstructor ) );
 
         return student;
 
