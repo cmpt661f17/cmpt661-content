@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Session Management App</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <!-- More info @ http://fontawesome.io/icons/ -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="views/css/styles.css">
+
+    <script>
+        //Set the active class on the clicked nav-link
+        //Do so when the document is loaded in the browser
+        document.addEventListener("DOMContentLoaded", () => {
+            // get current URL path and assign 'active' class
+            const pathname = window.location.pathname;
+            //set css class of the link corresponding to the current Url to active
+            const menuItem = document.querySelector(`.navbar-nav > li > a[href='${pathname}']`).parentNode;
+            //console.log(menuItem);
+            menuItem.classList.add("active");
+        });
+
+    </script>
+</head>
+
+<body>
+
+<nav class="navbar sticky-top navbar-expand-sm bg-primary navbar-dark rounded">
+    <!-- Brand -->
+    <a class="navbar-brand" href="/">
+        <img src="/views/img/cookie.gif" alt="Logo" style="width:30px;">
+    </a>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="nav-content">
+        <ul class="navbar-nav active">
+            <li class="nav-item">
+                <a class="nav-link" href="/hala">Hala</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/shop">Shopping</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/shopls">Shopping (localStorage)</a>
+            </li>
+        </ul>
+
+        <!--Only show the welcome message and the menu if the user already login -->
+        {{#if session.user}}
+         <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <p class="navbar-text">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        Welcome {{session.user.firstname}} {{session.user.lastname}}
+                    </p>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        Logout
+                    </a>
+                </li>
+         </ul>
+        {{/if}}
+    </div>
+</nav>
+<div class="container">
+    {{{body}}}
+</div>
+
+</body>
+</html>

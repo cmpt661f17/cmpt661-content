@@ -1,0 +1,15 @@
+<h1>Order Form</h1>
+<form action="/shop" method="post">
+    Item to Order:
+    <input type="text" name="item"><br>
+    <input type="submit" value="Add to Cart">
+</form>
+
+{{#if shoppingCart}}
+    <h1>Your shopping cart:</h1>
+    <ul>
+        {{#each shoppingCart}}
+           <li>{{this}}</li>
+        {{/each}}
+    </ul>
+{{/if}}

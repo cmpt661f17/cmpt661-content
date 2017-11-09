@@ -1,0 +1,31 @@
+<div class="offset-md-4 col-md-4">
+    <h4 style="text-align: center">Session Example App</h4>
+
+    {{#if errMessage}}
+        <div class="alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <div id="errMessage">{{errMessage}}</div>
+    </div>
+    {{/if}}
+
+    <form id="login-form" method="post" action="/login">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            </span>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
+        </div>
+        <div><br/></div>
+        <div class="input-group">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+            </span>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        </div>
+        <br>
+        <div>
+            <input id="submitBtn" class="btn btn-lg btn-primary btn-block" type="submit" value="Login">
+        </div>
+
+    </form>
+</div>
