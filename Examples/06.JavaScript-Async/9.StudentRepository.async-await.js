@@ -36,7 +36,7 @@ class StudentRepository {
         const student = await this.getStudent(studentId);
         const courses = await this.getCourses(student.courseIds);
         //Get instructor details for each course. Promise.all allows doing so in parallel.
-        // The commented statement below is equivalent to the one used under it
+        // The commented statement below is equivalent to the one used under itf
         //student.courses = await Promise.all( courses.map( c => this.getCourseInstructor(c) ) );
         student.courses = await Promise.all( courses.map( this.getCourseInstructor ) );
 
