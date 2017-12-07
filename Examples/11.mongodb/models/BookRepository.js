@@ -131,9 +131,11 @@ class BookRepository {
         const fs = require('fs-extra')
 
         const store1 = await this.addStore({name: 'Jarir Bookstore', city: 'Doha'})
-        const store2 = await this.addStore({name: 'Jarir Bookstore', city: 'Dubai'})
+        const store2 = await this.addStore({name: 'Jarir Bookstore', city: 'Istanbul'})
 
-        const books = await fs.readJson('data/books.json')
+        const data = await fs.readFile('data/books.json')
+        const books = JSON.parse(data)
+
         console.log('Retrieved books from json file and added to MongoDB books Collection: ' + books.length)
 
         for (const book of books) {
