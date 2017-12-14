@@ -1,0 +1,26 @@
+[
+  {
+    "title": "2015-2016",
+    "registrationStartDate": "12/1/2015",
+    "registrationEndDate": "9/30/2016",
+    "startDate": "9/1/2016",
+    "endDate": "6/15/2017",
+    "status": "closed"
+  },
+  {
+    "title": "2016-2017",
+    "registrationStartDate": "12/1/2016",
+    "registrationEndDate": "9/30/2017",
+    "startDate": "9/1/2017",
+    "endDate": "6/15/2018",
+    "status": "current"
+  },
+  {
+    "title": "2017-2018",
+    "registrationStartDate": "12/1/2017",
+    "registrationEndDate": "9/30/2018",
+    "startDate": "9/1/2018",
+    "endDate": "6/15/2019",
+    "status": "next"
+  }
+]

@@ -1,0 +1,602 @@
+[
+  {
+    "studentId": 20160045,
+    "firstName": "Mariam",
+    "lastName": "Muldownie",
+    "dateOfBirth": "7/18/2013",
+    "gender": "Female",
+    "email": "mhelsdon0@rakuten.co.jp",
+    "grade": "kg1",
+    "status": "Rejected"
+  },
+  {
+    "studentId": 20160045,
+    "firstName": "Skell",
+    "lastName": "Giovanetti",
+    "dateOfBirth": "9/9/2010",
+    "gender": "Male",
+    "email": "syemm1@princeton.edu",
+    "grade": 2,
+    "status": "Accepted"
+  },
+  {
+    "studentId": 20170088,
+    "firstName": "Aigneis",
+    "lastName": "Vedntyev",
+    "dateOfBirth": "6/9/2012",
+    "gender": "Female",
+    "email": "ajennison2@opensource.org",
+    "grade": "kg2",
+    "status": "Pending"
+  },
+  {
+    "studentId": 20170090,
+    "firstName": "Guntar",
+    "lastName": "Giovanetti",
+    "dateOfBirth": "5/25/2009",
+    "gender": "Male",
+    "email": "gfoffano3@behance.net",
+    "grade": 3,
+    "status": "Pending"
+  },
+  {
+    "studentId": 20170094,
+    "firstName": "Lukas",
+    "lastName": "Lowden",
+    "dateOfBirth": "1/9/2012",
+    "gender": "Male",
+    "email": "lcorley4@omniture.com",
+    "grade": "kg2",
+    "status": "Pending"
+  },
+  {
+    "studentId": 20160078,
+    "firstName": "Butch",
+    "lastName": "Cassam",
+    "dateOfBirth": "6/14/2010",
+    "gender": "Male",
+    "email": "bfosse5@examiner.com",
+    "grade": 2,
+    "status": "Accepted"
+  },
+  {
+    "studentId": 20160067,
+    "firstName": "Doralynn",
+    "lastName": "Zanussii",
+    "dateOfBirth": "6/28/2000",
+    "gender": "Female",
+    "email": "dmoverley6@intel.com",
+    "grade": 12,
+    "status": "Rejected"
+  },
+  {
+    "studentId": 20160010,
+    "firstName": "Ezekiel",
+    "lastName": "Giovanetti",
+    "dateOfBirth": "1/31/2004",
+    "gender": "Male",
+    "email": "eackerley7@nymag.com",
+    "grade": 8,
+    "status": "Accepted"
+  },
+  {
+    "studentId": 20160099,
+    "firstName": "Ernie",
+    "lastName": "Pallin",
+    "dateOfBirth": "12/5/2002",
+    "gender": "Male",
+    "email": "emellem8@examiner.com",
+    "grade": 10,
+    "status": "Rejected"
+  },
+  {
+    "studentId": 20160023,
+    "firstName": "Blondelle",
+    "lastName": "Lowden",
+    "dateOfBirth": "7/13/2005",
+    "gender": "Female",
+    "email": "bive9@discovery.com",
+    "grade": 7,
+    "status": "Accepted"
+  },
+  {
+    "studentId": 20170015,
+    "firstName": "Aurelie",
+    "lastName": "Zanussii",
+    "dateOfBirth": "5/15/2004",
+    "gender": "Female",
+    "email": "astivea@ning.com",
+    "grade": 8,
+    "status": "Rejected"
+  },
+  {
+    "studentId": 20170014,
+    "firstName": "Marcelia",
+    "lastName": "Muldownie",
+    "dateOfBirth": "9/2/2005",
+    "gender": "Female",
+    "email": "msiehardb@godaddy.com",
+    "grade": 7,
+    "status": "Pending"
+  },
+  {
+    "studentId": 20170013,
+    "firstName": "Berti",
+    "lastName": "Shambrooke",
+    "dateOfBirth": "12/14/2007",
+    "gender": "Male",
+    "email": "bpikenc@imgur.com",
+    "grade": 5,
+    "status": "Pending"
+  },
+  {
+    "studentId": 20180012,
+    "firstName": "Tremaine",
+    "lastName": "Shambrooke",
+    "dateOfBirth": "12/11/2006",
+    "gender": "Male",
+    "email": "tduberryd@who.int",
+    "grade": "kg2",
+    "status": "Pending"
+  },
+  {
+    "studentId": 20170011,
+    "firstName": "Balduin",
+    "lastName": "Tysall",
+    "dateOfBirth": "11/12/2001",
+    "gender": "Male",
+    "email": "bhundaye@examiner.com",
+    "grade": 11,
+    "status": "Rejected"
+  },
+  {
+    "studentId": 20170025,
+    "firstName": "Darcee",
+    "lastName": "Mucklo",
+    "dateOfBirth": "10/9/2002",
+    "gender": "Female",
+    "email": "dpenella0@google.co.jp",
+    "grade": 1,
+    "status": "Waiting List"
+  },
+  {
+    "studentId": 20180022,
+    "firstName": "Mervin",
+    "lastName": "Dougher",
+    "dateOfBirth": "12/30/2009",
+    "gender": "Male",
+    "email": "mdarleston1@utexas.edu",
+    "grade": 1,
+    "status": "Pending"
+  },
+  {
+    "studentId": 20160034,
+    "firstName": "Celestyn",
+    "lastName": "Hise",
+    "dateOfBirth": "4/5/2008",
+    "gender": "Female",
+    "email": "cpressland2@pinterest.com",
+    "grade": 9,
+    "status": "Accepted"
+  },
+  {
+    "studentId": 20170101,
+    "firstName": "Christoforo",
+    "lastName": "Ottee",
+    "dateOfBirth": "6/18/2011",
+    "gender": "Male",
+    "email": "clarter3@umich.edu",
+    "grade": "kg1",
+    "status": "Rejected"
+  },
+  {
+    "studentId": 20180026,
+    "firstName": "Pammi",
+    "lastName": "Arbuckle",
+    "dateOfBirth": "7/8/2009",
+    "gender": "Female",
+    "email": "preah4@telegraph.co.uk",
+    "grade": 12,
+    "status": "Pending"
+  },
+  {
+    "studentId": 20160292,
+    "firstName": "Sonny",
+    "lastName": "Bannard",
+    "dateOfBirth": "4/22/2012",
+    "gender": "Female",
+    "email": "smchirrie5@sina.com.cn",
+    "grade": 2,
+    "status": "Waiting List"
+  },
+  {
+    "studentId": 20160052,
+    "firstName": "Myranda",
+    "lastName": "Khrishtafovich",
+    "dateOfBirth": "7/20/2002",
+    "gender": "Female",
+    "email": "mstleger6@zdnet.com",
+    "grade": 10,
+    "status": "Accepted"
+  },
+  {
+    "studentId": 20180046,
+    "firstName": "Haven",
+    "lastName": "Hise",
+    "dateOfBirth": "8/16/2008",
+    "gender": "Male",
+    "email": "hluc7@aol.com",
+    "grade": 9,
+    "status": "Withdrawn"
+  },
+  {
+    "studentId": 20161292,
+    "firstName": "Maurise",
+    "lastName": "Arbuckle",
+    "dateOfBirth": "10/25/2006",
+    "gender": "Male",
+    "email": "moverill8@buzzfeed.com",
+    "grade": 3,
+    "status": "Waiting List"
+  },
+  {
+    "studentId": 20162292,
+    "firstName": "Neill",
+    "lastName": "Dougher",
+    "dateOfBirth": "10/22/2002",
+    "gender": "Male",
+    "email": "ntomasi9@vinaora.com",
+    "grade": 3,
+    "status": "Waiting List"
+  },
+  {
+    "studentId": 20180062,
+    "firstName": "Othella",
+    "lastName": "Hise",
+    "dateOfBirth": "9/30/2000",
+    "gender": "Female",
+    "email": "orucklessea@issuu.com",
+    "grade": 9,
+    "status": "Pending"
+  },
+  {
+    "studentId": 20172393,
+    "firstName": "Ronny",
+    "lastName": "Weiss",
+    "dateOfBirth": "5/30/2004",
+    "gender": "Male",
+    "email": "rwilkinsb@ihg.com",
+    "grade": 10,
+    "status": "Accepted"
+  },
+  {
+    "studentId": 20180092,
+    "firstName": "Sabra",
+    "lastName": "Dodman",
+    "dateOfBirth": "5/13/2007",
+    "gender": "Female",
+    "email": "scalbrathec@mac.com",
+    "grade": 2,
+    "status": "Pending"
+  },
+  {
+    "studentId": 20170099,
+    "firstName": "Crichton",
+    "lastName": "Khrishtafovich",
+    "dateOfBirth": "8/22/2006",
+    "gender": "Male",
+    "email": "cklawid@nhs.uk",
+    "grade": 3,
+    "status": "Withdrawn"
+  },
+  {
+    "studentId": 20162313,
+    "firstName": "Guthry",
+    "lastName": "Feldhorn",
+    "dateOfBirth": "2/3/2007",
+    "gender": "Male",
+    "email": "gseawarde@telegraph.co.uk",
+    "grade": 4,
+    "status": "Waiting List"
+  },
+  {
+    "studentId": 20180001,
+    "firstName": "Wilona",
+    "lastName": "Arbuckle",
+    "dateOfBirth": "5/30/2005",
+    "gender": "Female",
+    "email": "wcapinf@issuu.com",
+    "grade": 8,
+    "status": "Pending"
+  },
+  {
+    "studentId": 20170024,
+    "firstName": "Eberhard",
+    "lastName": "Dodman",
+    "dateOfBirth": "6/27/2011",
+    "gender": "Male",
+    "email": "eluchettig@fastcompany.com",
+    "grade": 12,
+    "status": "Waiting List"
+  },
+  {
+    "studentId": 20161120,
+    "firstName": "Robena",
+    "lastName": "Mucklo",
+    "dateOfBirth": "3/8/2003",
+    "gender": "Female",
+    "email": "rnelh@ibm.com",
+    "grade": 5,
+    "status": "Rejected"
+  },
+  {
+    "studentId": 20171412,
+    "firstName": "Christian",
+    "lastName": "Mucklo",
+    "dateOfBirth": "11/15/2003",
+    "gender": "Female",
+    "email": "cmottersheadi@msn.com",
+    "grade": 10,
+    "status": "Rejected"
+  },
+  {
+    "studentId": 20170120,
+    "firstName": "Alfredo",
+    "lastName": "Khrishtafovich",
+    "dateOfBirth": "1/21/2004",
+    "gender": "Male",
+    "email": "aconstablej@g.co",
+    "grade": 8,
+    "status": "Waiting List"
+  },
+  {
+    "studentId": 20173412,
+    "firstName": "Georgeanne",
+    "lastName": "Hise",
+    "dateOfBirth": "12/15/2006",
+    "gender": "Female",
+    "email": "gmcfaellk@usgs.gov",
+    "grade": 4,
+    "status": "Waiting List"
+  },
+  {
+    "studentId": 20171430,
+    "firstName": "Nikita",
+    "lastName": "Feldhorn",
+    "dateOfBirth": "4/17/2009",
+    "gender": "Male",
+    "email": "nsaylel@desdev.cn",
+    "grade": 6,
+    "status": "Withdrawn"
+  },
+  {
+    "studentId": 20163499,
+    "firstName": "Brynn",
+    "lastName": "Bannard",
+    "dateOfBirth": "1/12/2004",
+    "gender": "Female",
+    "email": "bbrodeurm@bravesites.com",
+    "grade": 10,
+    "status": "Withdrawn"
+  },
+  {
+    "studentId": 20173227,
+    "firstName": "Eduino",
+    "lastName": "Dodman",
+    "dateOfBirth": "4/27/2003",
+    "gender": "Male",
+    "email": "eschaumannn@blogs.com",
+    "grade": 10,
+    "status": "Rejected"
+  },
+  {
+    "studentId": 20180107,
+    "firstName": "Maureene",
+    "lastName": "Weiss",
+    "dateOfBirth": "7/8/2012",
+    "gender": "Female",
+    "email": "mbretono@bluehost.com",
+    "grade": 11,
+    "status": "Pending"
+  },
+  {
+    "studentId": 20161420,
+    "firstName": "Jamesy",
+    "lastName": "Feldhorn",
+    "dateOfBirth": "4/12/2006",
+    "gender": "Male",
+    "email": "jphillputp@reverbnation.com",
+    "grade": 1,
+    "status": "Waiting List"
+  },
+  {
+    "studentId": 20173209,
+    "firstName": "Tedda",
+    "lastName": "Arbuckle",
+    "dateOfBirth": "10/12/2008",
+    "gender": "Female",
+    "email": "tbattersbyq@sitemeter.com",
+    "grade": 2,
+    "status": "Rejected"
+  },
+  {
+    "studentId": 20180967,
+    "firstName": "Leontyne",
+    "lastName": "Feldhorn",
+    "dateOfBirth": "2/2/2012",
+    "gender": "Female",
+    "email": "lcowxr@rediff.com",
+    "grade": 6,
+    "status": "Pending"
+  },
+  {
+    "studentId": 20180111,
+    "firstName": "Merissa",
+    "lastName": "Weiss",
+    "dateOfBirth": "11/11/2004",
+    "gender": "Female",
+    "email": "mbarthelmess@globo.com",
+    "grade": 5,
+    "status": "Pending"
+  },
+  {
+    "studentId": 20160092,
+    "firstName": "Cariotta",
+    "lastName": "Feldhorn",
+    "dateOfBirth": "6/18/2007",
+    "gender": "Female",
+    "email": "cmorphett@nydailynews.com",
+    "grade": "kg1",
+    "status": "Waiting List"
+  },
+  {
+    "studentId": 20170910,
+    "firstName": "Brand",
+    "lastName": "Feldhorn",
+    "dateOfBirth": "6/15/2011",
+    "gender": "Male",
+    "email": "bgullbergu@icio.us",
+    "grade": 8,
+    "status": "Accepted"
+  },
+  {
+    "studentId": 20160900,
+    "firstName": "Dunstan",
+    "lastName": "Dougher",
+    "dateOfBirth": "6/3/2011",
+    "gender": "Male",
+    "email": "darnoutv@nps.gov",
+    "grade": 3,
+    "status": "Withdrawn"
+  },
+  {
+    "studentId": 20170114,
+    "firstName": "Koren",
+    "lastName": "Khrishtafovich",
+    "dateOfBirth": "5/12/2001",
+    "gender": "Female",
+    "email": "kdoringw@instagram.com",
+    "grade": 5,
+    "status": "Rejected"
+  },
+  {
+    "studentId": 20160067,
+    "firstName": "Ted",
+    "lastName": "Dougher",
+    "dateOfBirth": "10/8/2009",
+    "gender": "Male",
+    "email": "tspridgeonx@shinystat.com",
+    "grade": 6,
+    "status": "Waiting List"
+  },
+  {
+    "studentId": 20180890,
+    "firstName": "Livy",
+    "lastName": "Dodman",
+    "dateOfBirth": "12/13/2004",
+    "gender": "Female",
+    "email": "ldufrayy@ftc.gov",
+    "grade": 4,
+    "status": "Pending"
+  },
+  {
+    "studentId": 20170580,
+    "firstName": "Dorey",
+    "lastName": "Bannard",
+    "dateOfBirth": "3/13/2001",
+    "gender": "Female",
+    "email": "ddiiorioz@dmoz.org",
+    "grade": 2,
+    "status": "Waiting List"
+  },
+  {
+    "studentId": 20160134,
+    "firstName": "Adriano",
+    "lastName": "Arbuckle",
+    "dateOfBirth": "1/2/2012",
+    "gender": "Male",
+    "email": "abrazelton10@irs.gov",
+    "grade": 12,
+    "status": "Withdrawn"
+  },
+  {
+    "studentId": 20170283,
+    "firstName": "Hale",
+    "lastName": "Ottee",
+    "dateOfBirth": "7/18/2009",
+    "gender": "Male",
+    "email": "hdat11@ezinearticles.com",
+    "grade": 11,
+    "status": "Accepted"
+  },
+  {
+    "studentId": 20170568,
+    "firstName": "Leone",
+    "lastName": "Mucklo",
+    "dateOfBirth": "11/1/2012",
+    "gender": "Female",
+    "email": "lcrossingham12@ask.com",
+    "grade": 6,
+    "status": "Rejected"
+  },
+  {
+    "studentId": 20180119,
+    "firstName": "Nicol",
+    "lastName": "Mucklo",
+    "dateOfBirth": "6/4/2003",
+    "gender": "Male",
+    "email": "nkewish13@oaic.gov.au",
+    "grade": "kg 2",
+    "status": "Pending"
+  },
+  {
+    "studentId": 20180123,
+    "firstName": "Saxe",
+    "lastName": "Mucklo",
+    "dateOfBirth": "8/24/2012",
+    "gender": "Male",
+    "email": "sfashion14@blinklist.com",
+    "grade": 11,
+    "status": "Pending"
+  },
+  {
+    "studentId": 20170068,
+    "firstName": "Dosi",
+    "lastName": "Dodman",
+    "dateOfBirth": "7/15/2003",
+    "gender": "Female",
+    "email": "dheadford15@spiegel.de",
+    "grade": 9,
+    "status": "Accepted"
+  },
+  {
+    "studentId": 20170583,
+    "firstName": "Barrett",
+    "lastName": "Dougher",
+    "dateOfBirth": "10/6/2007",
+    "gender": "Male",
+    "email": "balpes16@com.com",
+    "grade": 9,
+    "status": "Accepted"
+  },
+  {
+    "studentId": 20180100,
+    "firstName": "Faith",
+    "lastName": "Bannard",
+    "dateOfBirth": "10/28/2009",
+    "gender": "Female",
+    "email": "flefevre17@miibeian.gov.cn",
+    "grade": "kg 2",
+    "status": "Pending"
+  },
+  {
+    "studentId": 20170183,
+    "firstName": "Guido",
+    "lastName": "Hise",
+    "dateOfBirth": "12/1/2011",
+    "gender": "Male",
+    "email": "gdeeman18@ed.gov",
+    "grade": 3,
+    "status": "Accepted"
+  }
+]
