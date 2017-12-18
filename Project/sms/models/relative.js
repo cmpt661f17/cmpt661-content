@@ -8,6 +8,8 @@ const relativeSchema = new mongoose.Schema({
     nationalId:String,
     homePhone:String,
     mobile:String,
+    email:String,
+    password:String,
     street:String,
     city:String,
     country:String,
@@ -20,5 +22,6 @@ const relativeSchema = new mongoose.Schema({
     isPrimary:{type:Boolean, default:false}
 
 });
+
 
 module.exports = mongoose.model('Relative', relativeSchema);
