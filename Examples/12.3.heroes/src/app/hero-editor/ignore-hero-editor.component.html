@@ -1,0 +1,66 @@
+<div class="container">
+  <h1 *ngIf="hero._id">Edit Hero details - {{hero.name}}</h1>
+  <h1 *ngIf="!hero._id">Add Hero - {{hero.name}}</h1>
+  <form (ngSubmit)="onSubmit()" [formGroup]="heroForm" novalidate>
+
+    <div class="form-group" [class.has-error]="heroForm.controls.name.errors">
+      <label class="control-label" for="name">Name</label>
+      <input type="text" class="form-control" id="name"  name="name"
+             formControlName="name" [(ngModel)]="hero.name">
+      <div *ngIf="heroForm.controls.name.errors" class="alert alert-danger">
+        Name is required, and must be at least 3 characters.
+      </div>
+    </div>
+
+<!--    <div class="form-group" [class.has-error]="quote.invalid && quote.touched">
+      <label class="control-label" for="quote">Quote</label>
+      <input type="text" class="form-control" id="quote" name="quote"
+             #quote="ngModel"
+             [(ngModel)]="hero.quote"
+             required>
+      <div *ngIf="quote.invalid && quote.touched" class="alert alert-danger">
+        Quote is required
+      </div>
+    </div>-->
+
+    <div class="form-group" [class.has-error]="heroForm.controls.heroType.errors">
+      <label class="control-label" for="heroType">Hero Type</label>
+      <select class="form-control" id="heroType" name="heroType"
+              formControlName="heroType" [(ngModel)]="hero.heroType">
+        <option *ngFor="let ht of heroTypes" [value]="ht">{{ht}}</option>
+      </select>
+      <div *ngIf="heroForm.controls.heroType.errors" class="alert alert-danger">
+        Hero Type is required
+      </div>
+    </div>
+
+    <h4>Quotes</h4>
+    <div formArrayName="quotes"
+         *ngFor="let quote of heroForm.get('quotes').controls; let i = index;">
+        <div [formGroupName]="i"  class="form-group">
+          <input formControlName="text" class="form-control">
+          <span class="delete" title="Delete quote" (click)="deleteQuote(i)">
+                <i style="color: indianred;" class="fa fa-times" aria-hidden="true"></i>
+          </span>
+        </div>
+    </div>
+
+    <div (click)="addQuote()" >
+      <i style="color: dodgerblue;" class="fa fa-plus" aria-hidden="true"></i> Quote
+    </div>
+
+    <br><br>
+
+    <button [disabled]="heroForm.invalid" type="submit" class="btn btn-primary">
+      Submit
+    </button>
+
+    <br><br>
+    <!-- routerLink="" just to make the link blue and underlined-->
+    <a (click)="goBack()" routerLink="">
+      <i style="color: dodgerblue;" class="fa fa-reply" aria-hidden="true"></i>
+      back
+    </a>
+
+  </form>
+</div>

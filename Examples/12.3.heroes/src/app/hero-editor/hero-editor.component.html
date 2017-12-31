@@ -1,0 +1,78 @@
+<div class="container">
+  <h1 *ngIf="hero._id">Edit Hero details - {{hero.name}}</h1>
+  <h1 *ngIf="!hero._id">Add Hero - {{hero.name}}</h1>
+  <form (ngSubmit)="onSubmit()" #heroForm="ngForm" novalidate>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="name">Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="name" name="name"
+               #name="ngModel"
+               [(ngModel)]="hero.name"
+               required pattern="...+"
+               [class.is-invalid]="name.invalid && name.touched">
+        <div *ngIf="name.invalid && name.touched" class="invalid-feedback">
+          Name is required, and must be at least 3 characters.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="heroType">Hero Type</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="heroType" name="heroType"
+                #heroType="ngModel"
+                [(ngModel)]="hero.heroType"
+                required
+                [class.is-invalid]="heroType.invalid && heroType.touched">
+          <option *ngFor="let ht of heroTypes" [value]="ht">{{ht}}</option>
+        </select>
+        <div *ngIf="heroType.invalid && heroType.touched" class="invalid-feedback">
+            Hero Type is required
+        </div>
+      </div>
+    </div>
+
+    <h4>Quotes</h4>
+    <button (click)="addQuote()" type="button" class="btn btn-link">
+        <i class="fa fa-plus" aria-hidden="true"></i> Quote
+    </button>
+
+    <div *ngFor="let quote of hero.quotes; let i = index" >
+      <div class="form-group row">
+        <div class="col-sm-11">
+          <input class="form-control" [id]="'quote.text' + i" [(ngModel)]="quote.text" [name]="'quote.text' + i"
+            required
+            [class.is-invalid]="heroForm.form.controls['quote.text' + i].invalid && heroForm.form.controls['quote.text' + i].touched">
+          <div class="invalid-feedback"
+               *ngIf="heroForm.form.controls['quote.text' + i].invalid && heroForm.form.controls['quote.text' + i].touched">
+            Quote is required
+          </div>
+        </div>
+
+        <div class="col-sm-1">
+          <span class="delete" title="Delete quote" (click)="deleteQuote(i)">
+                <i style="color: indianred;" class="fa fa-times" aria-hidden="true"></i>
+            </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-12">
+        <button [disabled]="heroForm.invalid" type="submit" class="btn btn-primary">
+          Submit
+        </button>
+      </div>
+    </div>
+
+    <!-- routerLink="" just to make the link blue and underlined-->
+    <div class="form-group row">
+      <div class="col-sm-12">
+        <button (click)="goBack()" type="button" class="btn btn-link">
+          <i class="fa fa-reply" aria-hidden="true"></i> back
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
