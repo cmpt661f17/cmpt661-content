@@ -1,0 +1,17 @@
+{
+  "name": "midterm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "express": "latest",
+    "express-handlebars": "latest",
+    "handlebars": "latest",
+    "node-fetch": "latest"
+  }
+}

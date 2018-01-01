@@ -1,0 +1,58 @@
+<h2>Surah Search </h2>
+
+<br>
+<form method="post" action="/surahs">
+    <div class="form-group">
+        <label for="type">Surah Type</label>
+        <select class="form-control" id="type" name="type" required>
+            <option value="All">All</option>
+            <option value="Meccan">Meccan</option>
+            <option value="Medinan">Medinan</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ayatCount">With Ayat > = </label>
+        <input type="text" class="form-control" id="ayaCount" name="ayaCount" required>
+    </div>
+
+    <input type="submit" class="btn btn-primary">
+
+</form>
+
+<div id="surahs">
+    {{#if surahs}}
+        <h4> Search Results ({{surahs.length}})  </h4>
+        <table class="table table-striped">
+        <tbody>
+        <tr>
+            <th> Id </th>
+            <th> Name </th>
+            <th> English Name </th>
+            <th> Aya Count </th>
+            <th> Type </th>
+        </tr>
+
+        {{#surahs}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{name}}</td>
+                <td>{{englishName}}</td>
+                <td>{{ayaCount}}</td>
+                <td>{{type}}</td>
+        {{/surahs}}
+
+    {{/if}}
+    </tbody>
+</table>
+</div>
+
+
+{{#if searchParams}}
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector('#type option[value="{{searchParams.type}}"]').selected = true;
+            document.querySelector('#ayaCount').value = {{searchParams.ayaCount}}
+        })
+    </script>
+{{/if}}

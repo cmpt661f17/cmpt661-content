@@ -1,0 +1,14 @@
+<br>
+<caption for="surahDropdown">Select a Surah:</caption>
+<select id="surahDropdown">
+    <option value=""></option>
+    {{#surahs}}
+        <option value="{{id}}"> {{englishName}} - {{name}}</option>
+    {{/surahs}}
+</select>
+
+</br></br>
+
+<div id="surahDetails"></div>
+
+<script src="/views/js/surah.js"></script>
