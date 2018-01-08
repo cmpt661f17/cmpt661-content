@@ -5,10 +5,15 @@
     <form (ngSubmit)="onSubmit()" #tripForm="ngForm" novalidate>
 
         <div class="form-group row" [class.is-invalid]="country.invalid && country.touched">
-            <label class="col-sm-2 col-form-label" for="country">Country</label>
+            <label class="col-sm-2 col-form-label" for="country">
+                Country
+            </label>
             <div class="col-sm-6">
-                <select id="country" name="country" #country="ngModel" [(ngModel)]="trip.country" class="form-control"
-                        (change)="countryChanged($event.target.value)" required>
+                <select id="country" name="country" class="form-control"
+                        #country="ngModel"
+                        [(ngModel)]="trip.country"
+                        (change)="countryChanged($event.target.value)"
+                        required>
                     <option value=""></option>
                     <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
                 </select>
@@ -18,11 +23,14 @@
             </div>
         </div>
 
-
         <div class="form-group row" [class.is-invalid]="city.invalid && city.touched">
-            <label class="col-sm-2 col-form-label" for="city">City</label>
+            <label class="col-sm-2 col-form-label" for="city">
+                City
+            </label>
             <div class="col-sm-6">
-                <select id="city" name="city" #city="ngModel" [(ngModel)]="trip.city"
+                <select id="city" name="city"
+                        #city="ngModel"
+                        [(ngModel)]="trip.city"
                         class="form-control" required>
                     <option value=""></option>
                     <option *ngFor="let city of cities" [value]="city.name">{{city.name}}</option>
@@ -34,9 +42,12 @@
         </div>
 
         <div class="form-group row" [class.is-invalid]="visitType.invalid && visitType.touched">
-            <label class="col-sm-2 col-form-label" for="visitType">Trip Type</label>
+            <label class="col-sm-2 col-form-label" for="visitType">
+                Trip Type
+            </label>
             <div class="col-sm-6">
-                <select class="form-control" id="visitType" name="visitType"
+                <select class="form-control" id="visitType"
+                        name="visitType"
                         #visitType="ngModel"
                         [(ngModel)]="trip.visitType" required>
                     <option *ngFor="let type of visitTypes" [value]="type">{{type}}</option>
@@ -48,11 +59,15 @@
         </div>
 
         <div class="form-group row" [class.is-invalid]="visitDate.invalid && visitDate.touched">
-            <label class="col-sm-2 col-form-label" for="visitDate">Visit Date</label>
+            <label class="col-sm-2 col-form-label" for="visitDate">
+                Visit Date
+            </label>
             <div class="col-sm-6">
-                <input type="date" class="form-control" id="visitDate" name="visitDate"
+                <input type="date" class="form-control"
+                       id="visitDate" name="visitDate"
                        #visitDate="ngModel"
-                       [ngModel]="trip.visitDate | date:'yyyy-MM-dd'" (ngModelChange)="trip.visitDate = $event"
+                       [ngModel]="trip.visitDate | date:'yyyy-MM-dd'"
+                       (ngModelChange)="trip.visitDate = $event"
                        required>
                 <div *ngIf="visitDate.invalid && visitDate.touched" class="invalid-feedback">
                     Visit Date is required
@@ -61,9 +76,12 @@
         </div>
 
         <div class="form-group row" [class.is-invalid]="totalCost.invalid && totalCost.touched">
-            <label class="col-sm-2 col-form-label" for="totalCost">Cost</label>
+            <label class="col-sm-2 col-form-label" for="totalCost">
+                Cost
+            </label>
             <div class="col-sm-6">
-                <input type="number" class="form-control" id="totalCost" name="totalCost"
+                <input type="number" class="form-control"
+                       id="totalCost" name="totalCost"
                        #totalCost="ngModel"
                        required
                        [(ngModel)]="trip.totalCost">
@@ -102,8 +120,8 @@
                 </div>
                 <!--<label class="col-sm-1 col-form-label" [for]="'landmark.rating' + i" >Rate</label>-->
                 <div class="col-sm-2">
-                    <app-rating-stars [readOnly]=false [rating]="landmark.rating" [max]=5
-                                      (ratingClicked)=onRating($event,i)>
+                    <app-rating-stars [readOnly]=false
+                                      [rating]="landmark.rating" [max]=5>
                     </app-rating-stars>
                     <span> Rating : {{landmark.rating}}</span>
                 </div>

@@ -18,7 +18,7 @@ export class TripsComponent implements OnInit {
       this.trips = await this.tripService.getTrips();
   }
 
-  async delete(tripToDelete: Trip): void {
+  async delete(tripToDelete: Trip) {
       await this.tripService.deleteTrip(tripToDelete._id);
       this.trips = this.trips.filter(trip => trip !== tripToDelete);
   }

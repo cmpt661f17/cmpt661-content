@@ -12,7 +12,7 @@ export class TripService {
 
     getCountries() {
         return this.http.get('/api/countries').toPromise();
-}
+    }
 
     getCities(country) {
         return this.http.get(`/api/cities/${country}`).toPromise();
