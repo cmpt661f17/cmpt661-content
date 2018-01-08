@@ -1,0 +1,47 @@
+<h3>
+    {{title}}
+</h3>
+<br/>
+
+<div *ngIf="trips">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Country</th>
+            <th>City</th>
+            <th>Visit Date</th>
+            <th>Visit Type</th>
+            <th>Cost</th>
+            <th>Landmarks</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let trip of trips; let i = index">
+            <td> {{trip.country}}</td>
+            <td> {{trip.city}}</td>
+            <td> {{trip.visitDate | date:'dd/MM/yyyy'}}</td>
+            <td> {{trip.visitType}}</td>
+            <td> ${{trip.totalCost}}</td>
+            <td>
+                <li *ngFor="let landmark of trip.landmarks">
+                    {{ landmark.name }}
+                    <br>
+                    <app-rating-stars max=5 rating={{landmark.rating}}>
+                    </app-rating-stars>
+                </li>
+            </td>
+            <td>
+                <a routerLink="/update/{{trip._id}}" class="btn btn-default">
+                    <i style="color: skyblue;" class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn-default" (click)="delete(trip)">
+                    <i style="color: indianred;" class="fa fa-times" aria-hidden="true"></i>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+

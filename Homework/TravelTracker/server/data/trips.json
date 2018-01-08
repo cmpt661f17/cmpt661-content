@@ -1,0 +1,32 @@
+[
+  {
+    "country": "Saudi Arabia",
+    "city": "Makkah",
+    "visitType": "Holiday",
+    "visitDate": "2017-06-05T00:00:00.000Z",
+    "totalCost": 3000,
+    "landmarks": [
+      {
+        "name": "Haram",
+        "rating": 5
+      },
+      {
+        "name": "Menna",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "country": "France",
+    "city": "Paris",
+    "visitDate": "2017-06-12T00:00:00.000Z",
+    "visitType": "Business",
+    "totalCost": 5500,
+    "landmarks": [
+      {
+        "name": "Eiffel Tower",
+        "rating": 3
+      }
+    ]
+  }
+]

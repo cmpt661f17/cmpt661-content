@@ -1,0 +1,127 @@
+<div class="container" *ngIf="trip">
+    <h1 *ngIf="trip?._id">Edit Trip - {{trip.country}} </h1> <br/>
+    <h1 *ngIf="!trip?._id">Add Trip - {{trip.country}} </h1> <br/>
+
+    <form (ngSubmit)="onSubmit()" #tripForm="ngForm" novalidate>
+
+        <div class="form-group row" [class.is-invalid]="country.invalid && country.touched">
+            <label class="col-sm-2 col-form-label" for="country">Country</label>
+            <div class="col-sm-6">
+                <select id="country" name="country" #country="ngModel" [(ngModel)]="trip.country" class="form-control"
+                        (change)="countryChanged($event.target.value)" required>
+                    <option value=""></option>
+                    <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+                </select>
+                <div *ngIf="country.invalid && country.touched" class="invalid-feedback">
+                    Country is required
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group row" [class.is-invalid]="city.invalid && city.touched">
+            <label class="col-sm-2 col-form-label" for="city">City</label>
+            <div class="col-sm-6">
+                <select id="city" name="city" #city="ngModel" [(ngModel)]="trip.city"
+                        class="form-control" required>
+                    <option value=""></option>
+                    <option *ngFor="let city of cities" [value]="city.name">{{city.name}}</option>
+                </select>
+                <div *ngIf="city.invalid && city.touched" class="invalid-feedback">
+                    City is required
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row" [class.is-invalid]="visitType.invalid && visitType.touched">
+            <label class="col-sm-2 col-form-label" for="visitType">Trip Type</label>
+            <div class="col-sm-6">
+                <select class="form-control" id="visitType" name="visitType"
+                        #visitType="ngModel"
+                        [(ngModel)]="trip.visitType" required>
+                    <option *ngFor="let type of visitTypes" [value]="type">{{type}}</option>
+                </select>
+                <div *ngIf="visitType.invalid && visitType.touched" class="invalid-feedback">
+                    Type is required
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row" [class.is-invalid]="visitDate.invalid && visitDate.touched">
+            <label class="col-sm-2 col-form-label" for="visitDate">Visit Date</label>
+            <div class="col-sm-6">
+                <input type="date" class="form-control" id="visitDate" name="visitDate"
+                       #visitDate="ngModel"
+                       [ngModel]="trip.visitDate | date:'yyyy-MM-dd'" (ngModelChange)="trip.visitDate = $event"
+                       required>
+                <div *ngIf="visitDate.invalid && visitDate.touched" class="invalid-feedback">
+                    Visit Date is required
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row" [class.is-invalid]="totalCost.invalid && totalCost.touched">
+            <label class="col-sm-2 col-form-label" for="totalCost">Cost</label>
+            <div class="col-sm-6">
+                <input type="number" class="form-control" id="totalCost" name="totalCost"
+                       #totalCost="ngModel"
+                       required
+                       [(ngModel)]="trip.totalCost">
+                <div *ngIf="totalCost.invalid && totalCost.touched" class="invalid-feedback">
+                    Cost is required
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+        <h3>Landmarks</h3>
+
+        <button (click)="addLandmark()" type="button" class="btn btn-link">
+            <i class="fa fa-plus" aria-hidden="true"></i> Landmark
+        </button>
+
+        <br/><br/>
+
+        <div *ngFor="let landmark of trip.landmarks; let i = index">
+            <div class="form-group row"
+                 [class.is-invalid]="tripForm.form?.controls['landmark.name' + i]?.invalid && tripForm.form.controls['landmark.name' + i].touched">
+                <label class="col-sm-3 col-form-label"
+                       [for]="'landmark.name' + i">Landmark Name
+                </label>
+                <div class="col-sm-5">
+                    <input class="form-control"
+                           [id]="'landmark.name' + i"
+                           [(ngModel)]="landmark.name"
+                           [name]="'landmark.name' + i"
+                           required>
+                    <div *ngIf="tripForm.form.controls['landmark.name' + i]?.invalid && tripForm.form.controls['landmark.name' + i].touched"
+                         class="invalid-feedback">
+                        Landmark is required
+                    </div>
+                </div>
+                <!--<label class="col-sm-1 col-form-label" [for]="'landmark.rating' + i" >Rate</label>-->
+                <div class="col-sm-2">
+                    <app-rating-stars [readOnly]=false [rating]="landmark.rating" [max]=5
+                                      (ratingClicked)=onRating($event,i)>
+                    </app-rating-stars>
+                    <span> Rating : {{landmark.rating}}</span>
+                </div>
+
+                <div class="col-sm-1">
+                    <span class="delete" title="Delete Landmark" (click)="deleteLandmark(i)">
+                        <i style="color: indianred;" class="fa fa-times" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-12">
+                <button [disabled]="tripForm.invalid" type="submit" class="btn btn-primary">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

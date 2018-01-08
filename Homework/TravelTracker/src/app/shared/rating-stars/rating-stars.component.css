@@ -1,0 +1,7 @@
+.icon{
+  display:inline-block;
+  margin-right:3px;
+  cursor:pointer;
+  color:#ccc;
+}
+.filled {color:#feb400;}
