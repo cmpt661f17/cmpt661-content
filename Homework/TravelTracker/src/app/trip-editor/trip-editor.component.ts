@@ -45,7 +45,7 @@ export class TripEditorComponent implements OnInit {
         if (!this.trip.landmarks) {
             this.trip.landmarks = [];
         }
-        this.trip.landmarks.push({name: '', rate: ''});
+        this.trip.landmarks.push({name: '', rating: ''});
     }
 
     deleteLandmark(index) {
@@ -60,10 +60,9 @@ export class TripEditorComponent implements OnInit {
     async onSubmit() {
         if (!this.trip._id) {
             await this.tripService.addTrip(this.trip)
-            this.router.navigateByUrl('/trips');
         } else {
             await this.tripService.updateTrip(this.trip);
-            this.router.navigateByUrl('/trips');
         }
+        this.router.navigateByUrl('/trips');
     }
 }

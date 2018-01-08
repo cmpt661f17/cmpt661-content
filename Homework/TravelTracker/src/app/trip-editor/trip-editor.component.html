@@ -95,44 +95,10 @@
 
         <h3>Landmarks</h3>
 
-        <button (click)="addLandmark()" type="button" class="btn btn-link">
-            <i class="fa fa-plus" aria-hidden="true"></i> Landmark
-        </button>
-
-        <br/><br/>
-
-        <div *ngFor="let landmark of trip.landmarks; let i = index">
-            <div class="form-group row"
-                 [class.is-invalid]="tripForm.form?.controls['landmark.name' + i]?.invalid && tripForm.form.controls['landmark.name' + i].touched">
-                <label class="col-sm-3 col-form-label"
-                       [for]="'landmark.name' + i">Landmark Name
-                </label>
-                <div class="col-sm-5">
-                    <input class="form-control"
-                           [id]="'landmark.name' + i"
-                           [(ngModel)]="landmark.name"
-                           [name]="'landmark.name' + i"
-                           required>
-                    <div *ngIf="tripForm.form.controls['landmark.name' + i]?.invalid && tripForm.form.controls['landmark.name' + i].touched"
-                         class="invalid-feedback">
-                        Landmark is required
-                    </div>
-                </div>
-                <!--<label class="col-sm-1 col-form-label" [for]="'landmark.rating' + i" >Rate</label>-->
-                <div class="col-sm-2">
-                    <app-rating-stars [readOnly]=false
-                                      [(rating)]="landmark.rating" [max]=5>
-                    </app-rating-stars>
-                    <span> Rating : {{landmark.rating}}</span>
-                </div>
-
-                <div class="col-sm-1">
-                    <span class="delete" title="Delete Landmark" (click)="deleteLandmark(i)">
-                        <i style="color: indianred;" class="fa fa-times" aria-hidden="true"></i>
-                    </span>
-                </div>
-            </div>
-        </div>
+        <app-landmarks-editor [(landmarks)]="trip.landmarks"
+                              (landmarksAdd)="addLandmark()"
+                              (landmarksDelete)="deleteLandmark($event)">
+        </app-landmarks-editor>
 
         <div class="form-group row">
             <div class="col-sm-12">

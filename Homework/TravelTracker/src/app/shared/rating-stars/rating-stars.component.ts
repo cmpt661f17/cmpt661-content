@@ -26,6 +26,7 @@ export class RatingStarsComponent implements OnInit {
   toggleRating(starIndex: number) {
     if (!this.readOnly) {
         this.rating = starIndex;
+        console.log("toggleRating.rating", this.rating);
         this.ratingChange.emit(this.rating);
     }
   }
