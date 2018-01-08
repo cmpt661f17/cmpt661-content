@@ -66,8 +66,4 @@ export class TripEditorComponent implements OnInit {
             this.router.navigateByUrl('/trips');
         }
     }
-
-    onRatingChange(rating: number, index: number) {
-        this.trip.landmarks[index].rating = rating;
-    }
 }

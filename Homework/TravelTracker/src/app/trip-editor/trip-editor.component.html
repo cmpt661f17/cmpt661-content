@@ -121,7 +121,7 @@
                 <!--<label class="col-sm-1 col-form-label" [for]="'landmark.rating' + i" >Rate</label>-->
                 <div class="col-sm-2">
                     <app-rating-stars [readOnly]=false
-                                      [rating]="landmark.rating" [max]=5>
+                                      [(rating)]="landmark.rating" [max]=5>
                     </app-rating-stars>
                     <span> Rating : {{landmark.rating}}</span>
                 </div>

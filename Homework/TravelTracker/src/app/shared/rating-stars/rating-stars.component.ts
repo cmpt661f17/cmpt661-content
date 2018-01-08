@@ -13,7 +13,7 @@ export class RatingStarsComponent implements OnInit {
   @Input() max = 5;
   @Input() readOnly = true;
   @Input() rating: number;
-  @Output() ratingClicked: EventEmitter<Number> = new EventEmitter<Number>();
+  @Output() ratingChange: EventEmitter<Number> = new EventEmitter<Number>();
   maxStars: any[];
 
   ngOnInit() {
@@ -26,7 +26,7 @@ export class RatingStarsComponent implements OnInit {
   toggleRating(starIndex: number) {
     if (!this.readOnly) {
         this.rating = starIndex;
-        this.ratingClicked.emit(this.rating);
+        this.ratingChange.emit(this.rating);
     }
   }
 }

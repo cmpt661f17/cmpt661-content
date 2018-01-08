@@ -54,7 +54,6 @@ class TripRepository {
       //To remove duplicates
       const countriesSet = new Set( countries.map(c => c.country) );
       countries = [...countriesSet];
-      console.log(countries);
       countries = countries.map(c => {
         return { name : c }
       });
@@ -84,7 +83,6 @@ class TripRepository {
                      });
       return cities;
   }
-
 }
 
 module.exports = new TripRepository();

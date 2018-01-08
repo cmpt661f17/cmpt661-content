@@ -37,7 +37,6 @@ class TripController {
   async getCities(req, res){
     let country = req.params.country;
     const cities = await tripRepository.getCities(country);
-    console.log(cities);
     res.json(cities);
   }
 }
