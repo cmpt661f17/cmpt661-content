@@ -6,8 +6,7 @@
 
 <form #landmarkFrom="ngForm" novalidate>
     <div *ngFor="let landmark of landmarks; let i = index">
-        <div class="form-group row"
-             [class.is-invalid]="landmarkFrom.form?.controls['landmark.name' + i]?.invalid && landmarkFrom.form.controls['landmark.name' + i].touched">
+        <div class="form-group row">
             <label class="col-sm-3 col-form-label"
                    [for]="'landmark.name' + i">Landmark Name
             </label>
@@ -16,7 +15,8 @@
                        [id]="'landmark.name' + i"
                        [(ngModel)]="landmark.name"
                        [name]="'landmark.name' + i"
-                       required>
+                       required
+                       [class.is-invalid]="landmarkFrom.form?.controls['landmark.name' + i]?.invalid && landmarkFrom.form.controls['landmark.name' + i].touched">
                 <div *ngIf="landmarkFrom.form.controls['landmark.name' + i]?.invalid && landmarkFrom.form.controls['landmark.name' + i].touched"
                      class="invalid-feedback">
                     Landmark is required

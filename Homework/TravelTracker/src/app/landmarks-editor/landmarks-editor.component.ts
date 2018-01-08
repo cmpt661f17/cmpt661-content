@@ -1,4 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-landmarks-editor',
@@ -11,8 +12,7 @@ export class LandmarksEditorComponent implements OnInit {
     @Output() landmarksAdd: EventEmitter<Number> = new EventEmitter();
     @Output() landmarksDelete: EventEmitter<Number> = new EventEmitter<Number>();
 
-    constructor() {
-    }
+    @ViewChild(NgForm) form;
 
     ngOnInit() {
     }

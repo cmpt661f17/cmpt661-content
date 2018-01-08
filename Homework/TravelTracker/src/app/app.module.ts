@@ -11,6 +11,7 @@ import { TripsComponent } from './trips/trips.component';
 import { RatingStarsComponent } from './shared/rating-stars/rating-stars.component';
 import { TripEditorComponent } from './trip-editor/trip-editor.component';
 import { LandmarksEditorComponent } from './landmarks-editor/landmarks-editor.component';
+import { LandmarksViewerComponent } from './landmarks-viewer/landmarks-viewer.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/trips', pathMatch: 'full' },
@@ -25,7 +26,8 @@ const routes: Routes = [
     TripsComponent,
     RatingStarsComponent,
     TripEditorComponent,
-    LandmarksEditorComponent
+    LandmarksEditorComponent,
+    LandmarksViewerComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

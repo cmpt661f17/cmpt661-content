@@ -4,7 +4,7 @@
 
     <form (ngSubmit)="onSubmit()" #tripForm="ngForm" novalidate>
 
-        <div class="form-group row" [class.is-invalid]="country.invalid && country.touched">
+        <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="country">
                 Country
             </label>
@@ -13,9 +13,12 @@
                         #country="ngModel"
                         [(ngModel)]="trip.country"
                         (change)="countryChanged($event.target.value)"
-                        required>
+                        required
+                        [class.is-invalid]="country.invalid && country.touched">
                     <option value=""></option>
-                    <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+                    <option *ngFor="let country of countries" [value]="country.name">
+                        {{country.name}}
+                    </option>
                 </select>
                 <div *ngIf="country.invalid && country.touched" class="invalid-feedback">
                     Country is required
@@ -23,7 +26,7 @@
             </div>
         </div>
 
-        <div class="form-group row" [class.is-invalid]="city.invalid && city.touched">
+        <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="city">
                 City
             </label>
@@ -31,9 +34,12 @@
                 <select id="city" name="city"
                         #city="ngModel"
                         [(ngModel)]="trip.city"
-                        class="form-control" required>
+                        class="form-control" required
+                        [class.is-invalid]="city.invalid && city.touched">
                     <option value=""></option>
-                    <option *ngFor="let city of cities" [value]="city.name">{{city.name}}</option>
+                    <option *ngFor="let city of cities" [value]="city.name">
+                        {{city.name}}
+                    </option>
                 </select>
                 <div *ngIf="city.invalid && city.touched" class="invalid-feedback">
                     City is required
@@ -41,7 +47,7 @@
             </div>
         </div>
 
-        <div class="form-group row" [class.is-invalid]="visitType.invalid && visitType.touched">
+        <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="visitType">
                 Trip Type
             </label>
@@ -49,8 +55,11 @@
                 <select class="form-control" id="visitType"
                         name="visitType"
                         #visitType="ngModel"
-                        [(ngModel)]="trip.visitType" required>
-                    <option *ngFor="let type of visitTypes" [value]="type">{{type}}</option>
+                        [(ngModel)]="trip.visitType" required
+                        [class.is-invalid]="visitType.invalid && visitType.touched">
+                    <option *ngFor="let type of visitTypes" [value]="type">
+                        {{type}}
+                    </option>
                 </select>
                 <div *ngIf="visitType.invalid && visitType.touched" class="invalid-feedback">
                     Type is required
@@ -58,7 +67,7 @@
             </div>
         </div>
 
-        <div class="form-group row" [class.is-invalid]="visitDate.invalid && visitDate.touched">
+        <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="visitDate">
                 Visit Date
             </label>
@@ -68,14 +77,15 @@
                        #visitDate="ngModel"
                        [ngModel]="trip.visitDate | date:'yyyy-MM-dd'"
                        (ngModelChange)="trip.visitDate = $event"
-                       required>
+                       required
+                       [class.is-invalid]="visitDate.invalid && visitDate.touched">
                 <div *ngIf="visitDate.invalid && visitDate.touched" class="invalid-feedback">
                     Visit Date is required
                 </div>
             </div>
         </div>
 
-        <div class="form-group row" [class.is-invalid]="totalCost.invalid && totalCost.touched">
+        <div class="form-group row">
             <label class="col-sm-2 col-form-label" for="totalCost">
                 Cost
             </label>
@@ -83,8 +93,9 @@
                 <input type="number" class="form-control"
                        id="totalCost" name="totalCost"
                        #totalCost="ngModel"
+                       [(ngModel)]="trip.totalCost"
                        required
-                       [(ngModel)]="trip.totalCost">
+                       [class.is-invalid]="totalCost.invalid && totalCost.touched">
                 <div *ngIf="totalCost.invalid && totalCost.touched" class="invalid-feedback">
                     Cost is required
                 </div>
@@ -102,7 +113,8 @@
 
         <div class="form-group row">
             <div class="col-sm-12">
-                <button [disabled]="tripForm.invalid" type="submit" class="btn btn-primary">
+                <button [disabled]="tripForm.invalid || landmarksEditor?.form?.invalid"
+                        type="submit" class="btn btn-primary">
                     Submit
                 </button>
             </div>

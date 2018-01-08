@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Trip} from '../trip';
 import {TripService} from '../trip.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {LandmarksEditorComponent} from '../landmarks-editor/landmarks-editor.component';
 
 
 @Component({
@@ -18,8 +19,9 @@ export class TripEditorComponent implements OnInit {
     visitTypes = ['Holiday', 'Business'];
     trip;
     countries;
-    /*This list based on the selected country*/
     cities;
+
+    @ViewChild(LandmarksEditorComponent) landmarksEditor: LandmarksEditorComponent;
 
     constructor(private tripService: TripService, private router: Router, private route: ActivatedRoute) {
     }
@@ -27,6 +29,7 @@ export class TripEditorComponent implements OnInit {
     async ngOnInit() {
         await this.getTrip();
         this.countries = await this.tripService.getCountries();
+        console.log(this.landmarksEditor)
     }
 
     async getTrip() {
@@ -54,6 +57,7 @@ export class TripEditorComponent implements OnInit {
 
     // The cities list are rebuilt every time the country is changed
     async countryChanged(country) {
+        console.log("countryChanger", country);
         this.cities = await this.tripService.getCities(this.trip.country);
     }
 

@@ -24,12 +24,8 @@
             <td> {{trip.visitType}}</td>
             <td> ${{trip.totalCost}}</td>
             <td>
-                <li *ngFor="let landmark of trip.landmarks">
-                    {{ landmark.name }}
-                    <br>
-                    <app-rating-stars max=5 rating={{landmark.rating}}>
-                    </app-rating-stars>
-                </li>
+                <app-landmarks-viewer [landmarks]="trip.landmarks">
+                </app-landmarks-viewer>
             </td>
             <td>
                 <a routerLink="/update/{{trip._id}}" class="btn btn-default">

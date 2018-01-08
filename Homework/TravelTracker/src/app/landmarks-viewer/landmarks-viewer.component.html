@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let landmark of landmarks">
+    {{ landmark.name }}
+    <br>
+    <app-rating-stars max=5 rating={{landmark.rating}}>
+    </app-rating-stars>
+  </li>
+</ul>
