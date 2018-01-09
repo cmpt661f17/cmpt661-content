@@ -89,12 +89,16 @@
             <label class="col-sm-2 col-form-label required" for="totalCost">
                 Cost
             </label>
+            <!--
+            Using custom validators from:
+            https://www.npmjs.com/package/ng2-validation
+            -->
             <div class="col-sm-6">
                 <input type="number" class="form-control"
                        id="totalCost" name="totalCost"
                        #totalCost="ngModel"
                        [(ngModel)]="trip.totalCost"
-                       required
+                       required [min]="500" [max]="6000"
                        [class.is-invalid]="totalCost.invalid && totalCost.touched">
                 <div *ngIf="totalCost.invalid && totalCost.touched" class="invalid-feedback">
                     Cost is required and it should be between $500 and $6000

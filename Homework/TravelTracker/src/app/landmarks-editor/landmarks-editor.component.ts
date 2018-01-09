@@ -18,9 +18,8 @@ export class LandmarksEditorComponent implements OnInit {
     ngOnInit() {
         //Listen to landmarks form status changes and inform the parent
         this.landmarksForm.statusChanges.subscribe(statusChange => {
-            console.log(statusChange, this.landmarksForm.valid);
+            //console.log(statusChange, this.landmarksForm.valid);
             this.landmarksStatusChange.emit(this.landmarksForm.valid);
-            //console.log(this.landmarksForm.form.controls[0]?.invalid);
         });
     }
 
