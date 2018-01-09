@@ -7,14 +7,20 @@ import {NgForm} from '@angular/forms';
 })
 export class LandmarksEditorComponent implements OnInit {
 
-    @Input() landmarks
-    @Output() landmarksChange: EventEmitter<Number> = new EventEmitter<Number>();
+    @Input() landmarks;
+    @Output() landmarksChange: EventEmitter<boolean> = new EventEmitter<boolean>();
     @Output() landmarksAdd: EventEmitter<Number> = new EventEmitter();
     @Output() landmarksDelete: EventEmitter<Number> = new EventEmitter<Number>();
+    @Output() landmarksStatusChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-    @ViewChild(NgForm) form;
+    @ViewChild(NgForm) landmarksForm;
 
     ngOnInit() {
+        //Listen to landmarks form status changes and inform the parent
+        this.landmarksForm.statusChanges.subscribe(statusChange => {
+            //console.log(statusChange, this.landmarksForm.valid);
+            this.landmarksStatusChange.emit(this.landmarksForm.valid);
+        });
     }
 
     onAddLandmark() {

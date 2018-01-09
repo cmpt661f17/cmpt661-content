@@ -108,12 +108,13 @@
 
         <app-landmarks-editor [(landmarks)]="trip.landmarks"
                               (landmarksAdd)="addLandmark()"
-                              (landmarksDelete)="deleteLandmark($event)">
+                              (landmarksDelete)="deleteLandmark($event)"
+                              (landmarksStatusChange)="onLandmarksStatusChange($event)">
         </app-landmarks-editor>
 
         <div class="form-group row">
             <div class="col-sm-12">
-                <button [disabled]="tripForm.invalid || landmarksEditor?.form?.invalid"
+                <button [disabled]="tripForm.invalid || !islandmarksFormValid"
                         type="submit" class="btn btn-primary">
                     Submit
                 </button>
