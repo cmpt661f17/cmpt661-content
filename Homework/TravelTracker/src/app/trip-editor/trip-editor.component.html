@@ -5,7 +5,7 @@
     <form (ngSubmit)="onSubmit()" #tripForm="ngForm" novalidate>
 
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="country">
+            <label class="col-sm-2 col-form-label required" for="country">
                 Country
             </label>
             <div class="col-sm-6">
@@ -27,7 +27,7 @@
         </div>
 
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="city">
+            <label class="col-sm-2 col-form-label required" for="city">
                 City
             </label>
             <div class="col-sm-6">
@@ -48,7 +48,7 @@
         </div>
 
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="visitType">
+            <label class="col-sm-2 col-form-label required" for="visitType">
                 Trip Type
             </label>
             <div class="col-sm-6">
@@ -68,7 +68,7 @@
         </div>
 
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="visitDate">
+            <label class="col-sm-2 col-form-label required" for="visitDate">
                 Visit Date
             </label>
             <div class="col-sm-6">
@@ -86,7 +86,7 @@
         </div>
 
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label" for="totalCost">
+            <label class="col-sm-2 col-form-label required" for="totalCost">
                 Cost
             </label>
             <div class="col-sm-6">
@@ -97,7 +97,7 @@
                        required
                        [class.is-invalid]="totalCost.invalid && totalCost.touched">
                 <div *ngIf="totalCost.invalid && totalCost.touched" class="invalid-feedback">
-                    Cost is required
+                    Cost is required and it should be between $500 and $6000
                 </div>
             </div>
         </div>
@@ -108,7 +108,8 @@
 
         <app-landmarks-editor [(landmarks)]="trip.landmarks"
                               (landmarksAdd)="addLandmark()"
-                              (landmarksDelete)="deleteLandmark($event)">
+                              (landmarksDelete)="deleteLandmark($event)"
+                              (landmarksStatusChange)="onLandmarksStatusChange($event)">
         </app-landmarks-editor>
 
         <div class="form-group row">

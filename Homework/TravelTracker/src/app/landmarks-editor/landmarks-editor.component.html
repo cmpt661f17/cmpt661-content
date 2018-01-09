@@ -7,10 +7,10 @@
 <form #f="ngForm" novalidate>
     <div *ngFor="let landmark of landmarks; let i = index">
         <div class="form-group row">
-            <label class="col-sm-3 col-form-label"
-                   [for]="'landmark.name' + i">Landmark Name
+            <label class="col-sm-2 col-form-label required"
+                   [for]="'landmark.name' + i">Name
             </label>
-            <div class="col-sm-5">
+            <div class="col-sm-7">
                 <input class="form-control"
                        [(ngModel)]="landmark.name"
                        [id]="'landmark.name' + i"
@@ -27,7 +27,7 @@
                                   [(rating)]="landmark.rating"
                                   [max]=5>
                 </app-rating-stars>
-                <span> Rating : {{landmark.rating}} </span>
+                <div> Rating : {{landmark.rating}} </div>
             </div>
 
             <div class="col-sm-1">

@@ -6,11 +6,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 @Component({
   selector: 'app-trip-editor',
   templateUrl: './trip-editor.component.html',
-    styles: [`
-        .error {
-            color:#a94442;
-        }
-    `]
 })
 export class TripEditorComponent implements OnInit {
 
