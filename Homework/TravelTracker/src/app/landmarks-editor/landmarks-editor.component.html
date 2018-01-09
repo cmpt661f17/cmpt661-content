@@ -4,7 +4,7 @@
 
 <br/><br/>
 
-<form #landmarkFrom="ngForm" novalidate>
+<form #f="ngForm" novalidate>
     <div *ngFor="let landmark of landmarks; let i = index">
         <div class="form-group row">
             <label class="col-sm-3 col-form-label"
@@ -12,21 +12,20 @@
             </label>
             <div class="col-sm-5">
                 <input class="form-control"
-                       [id]="'landmark.name' + i"
                        [(ngModel)]="landmark.name"
+                       [id]="'landmark.name' + i"
                        [name]="'landmark.name' + i"
                        required
-                       [class.is-invalid]="landmarkFrom.form?.controls['landmark.name' + i]?.invalid && landmarkFrom.form.controls['landmark.name' + i].touched">
-                <div *ngIf="landmarkFrom.form.controls['landmark.name' + i]?.invalid && landmarkFrom.form.controls['landmark.name' + i].touched"
+                       [class.is-invalid]="f.form.controls[i]?.invalid && f.form.controls[i].touched">
+                <div *ngIf="f.form.controls[i]?.invalid && f.form.controls[i].touched"
                      class="invalid-feedback">
                     Landmark is required
                 </div>
             </div>
-            <!--<label class="col-sm-1 col-form-label" [for]="'landmark.rating' + i" >Rate</label>-->
             <div class="col-sm-2">
                 <app-rating-stars [readOnly]=false
-                                  [(rating)]="landmark.rating" [max]=5
-                                  >
+                                  [(rating)]="landmark.rating"
+                                  [max]=5>
                 </app-rating-stars>
                 <span> Rating : {{landmark.rating}} </span>
             </div>

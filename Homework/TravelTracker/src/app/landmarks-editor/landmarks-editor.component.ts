@@ -20,6 +20,7 @@ export class LandmarksEditorComponent implements OnInit {
         this.landmarksForm.statusChanges.subscribe(statusChange => {
             //console.log(statusChange, this.landmarksForm.valid);
             this.landmarksStatusChange.emit(this.landmarksForm.valid);
+            //console.log(this.landmarksForm.form.controls[0]?.invalid);
         });
     }
 
