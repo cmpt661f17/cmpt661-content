@@ -1,0 +1,87 @@
+<div class="container">
+    <!-- For your info: -->
+    <!-- Input elements for a new task: sura, ayaFrom, ayaTo, taskType, dueDate -->
+    <!-- Input elements for completing a task: completionDate, masteryLevel-->
+    <!-- taskTypes = ["Memorization", 'Revision"] -->
+    <!-- masteryLevels = ["Excellent", "Ok", "Poor"] -->
+    <form>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label required" for="sura">
+                Sura
+            </label>
+            <div class="col-sm-6">
+                <select id="sura" name="sura" class="form-control"
+                        required>
+                    <option value=""></option>
+                    <option>
+                        Fill-it
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label required" for="sura">
+                Aya From
+            </label>
+            <div class="col-sm-6">
+                <select id="ayaFrom" name="ayaFrom" class="form-control"
+                        required>
+                    <option value=""></option>
+                    <option>
+                        Fill-it
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label required" for="sura">
+                Aya To
+            </label>
+            <div class="col-sm-6">
+                <select id="ayaTo" name="ayaTo" class="form-control"
+                        required>
+                    <option value=""></option>
+                    <option>
+                        Fill-it
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label required" for="sura">
+                Task Type
+            </label>
+            <div class="col-sm-6">
+                <select id="taskType" name="taskType" class="form-control"
+                        required>
+                    <option value=""></option>
+                    <option>
+                        Fill-it
+                    </option>
+                </select>
+            </div>
+        </div>
+
+         <div class="form-group row">
+            <label class="col-sm-2 col-form-label required" for="dueDate">
+                Due Date
+            </label>
+            <div class="col-sm-6">
+                <input type="date" class="form-control"
+                       id="dueDate" name="dueDate">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-12">
+                <button [disabled]="tripForm.invalid || !islandmarksFormValid"
+                        type="submit" class="btn btn-primary">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
