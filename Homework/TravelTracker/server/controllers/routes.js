@@ -1,5 +1,3 @@
-//Look at this super-slim, happy and joyful router after kicking out all the logic to the controller 
-
 const express = require('express');
 const tripController = require('./TripController');
 
@@ -15,7 +13,6 @@ router.route('/trips/')
 router.route('/trips/:tripId')
           .get(tripController.getTrip)
           .put(tripController.updateTrip)
-          .delete(tripController.deleteTrip)
-
+          .delete(tripController.deleteTrip);
 
 module.exports = router;
